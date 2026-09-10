@@ -42,25 +42,23 @@ export default function Navbar({ onOpenQuote }) {
           {/* Desktop Navigation Links */}
           <nav className="hidden md:flex items-center space-x-8 lg:space-x-10">
             {navLinks.map((link) => (
-              <a
+              <span
                 key={link.name}
-                href={link.href}
-                className="text-xs uppercase tracking-[0.18em] font-medium transition-all duration-300 relative group py-1 text-charcoal hover:text-copper"
+                className="text-xs uppercase tracking-[0.18em] font-medium py-1 text-charcoal cursor-default"
               >
                 {link.name}
-                <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-copper transition-all duration-300 group-hover:w-full" />
-              </a>
+              </span>
             ))}
           </nav>
 
           {/* CTA Button */}
           <div className="hidden md:flex items-center space-x-4">
             <button
-              onClick={onOpenQuote}
-              className="text-xs uppercase tracking-[0.16em] font-semibold px-6 py-2.5 rounded-none border border-copper bg-copper text-white hover:bg-copper-hover transition-all duration-300 flex items-center gap-2 group shadow-sm"
+              type="button"
+              className="text-xs uppercase tracking-[0.16em] font-semibold px-6 py-2.5 rounded-none border border-copper bg-copper text-white flex items-center gap-2 shadow-sm cursor-default"
             >
               <span>REQUEST A QUOTE</span>
-              <ArrowUpRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              <ArrowUpRight className="w-3.5 h-3.5" />
             </button>
           </div>
 
@@ -95,28 +93,23 @@ export default function Navbar({ onOpenQuote }) {
               </div>
               <div className="flex flex-col space-y-4">
                 {navLinks.map((link, idx) => (
-                  <motion.a
+                  <motion.div
                     key={link.name}
-                    href={link.href}
-                    onClick={() => setMobileMenuOpen(false)}
                     initial={{ opacity: 0, x: -15 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.05 * idx }}
-                    className="text-xl font-display uppercase tracking-wider text-white hover:text-copper flex items-center justify-between py-2 border-b border-white/5"
+                    className="text-xl font-display uppercase tracking-wider text-white flex items-center justify-between py-2 border-b border-white/5 cursor-default"
                   >
                     <span>{link.name}</span>
                     <span className="text-xs font-mono text-copper/60">0{idx + 1}</span>
-                  </motion.a>
+                  </motion.div>
                 ))}
               </div>
 
               <div className="pt-4">
                 <button
-                  onClick={() => {
-                    setMobileMenuOpen(false);
-                    onOpenQuote();
-                  }}
-                  className="w-full bg-copper hover:bg-copper-hover text-white text-xs uppercase tracking-[0.2em] py-4 flex items-center justify-center gap-2 font-medium transition-colors"
+                  type="button"
+                  className="w-full bg-copper text-white text-xs uppercase tracking-[0.2em] py-4 flex items-center justify-center gap-2 font-medium cursor-default"
                 >
                   <span>REQUEST A QUOTE</span>
                   <ArrowUpRight className="w-4 h-4" />

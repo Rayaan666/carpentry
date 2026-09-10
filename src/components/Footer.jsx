@@ -76,13 +76,12 @@ export default function Footer({ onOpenQuote }) {
             <ul className="space-y-3">
               {navigationLinks.map((link) => (
                 <li key={link.name}>
-                  <a
-                    href={link.href}
-                    className="text-sm text-charcoal/80 hover:text-copper transition-colors uppercase font-mono tracking-wider flex items-center gap-2 group"
+                  <span
+                    className="text-sm text-charcoal/80 uppercase font-mono tracking-wider flex items-center gap-2 cursor-default"
                   >
-                    <span className="w-1.5 h-1.5 rounded-full bg-copper/40 group-hover:bg-copper transition-colors" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-copper/40" />
                     <span>{link.name}</span>
-                  </a>
+                  </span>
                 </li>
               ))}
             </ul>
@@ -96,13 +95,12 @@ export default function Footer({ onOpenQuote }) {
             <ul className="space-y-3">
               {servicesList.map((service) => (
                 <li key={service}>
-                  <button
-                    onClick={onOpenQuote}
-                    className="text-left text-sm text-charcoal/80 hover:text-copper transition-colors uppercase font-mono tracking-wider flex items-center gap-2 group"
+                  <span
+                    className="text-left text-sm text-charcoal/80 uppercase font-mono tracking-wider flex items-center gap-2 cursor-default"
                   >
-                    <span className="w-1.5 h-1.5 rounded-full bg-copper/40 group-hover:bg-copper transition-colors" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-copper/40" />
                     <span>{service}</span>
-                  </button>
+                  </span>
                 </li>
               ))}
             </ul>
@@ -117,16 +115,12 @@ export default function Footer({ onOpenQuote }) {
             <div className="space-y-4 text-sm font-light text-charcoal/85">
               <div className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-copper shrink-0" />
-                <a href="mailto:info@leadevents.com" className="hover:text-copper transition-colors">
-                  info@leadevents.com
-                </a>
+                <span className="cursor-default">info@leadevents.com</span>
               </div>
 
               <div className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-copper shrink-0" />
-                <a href="tel:+971509689671" className="hover:text-copper transition-colors">
-                  +971 50 9689671
-                </a>
+                <span className="cursor-default">+971 50 9689671</span>
               </div>
 
               <div className="flex items-start gap-3">
@@ -140,37 +134,20 @@ export default function Footer({ onOpenQuote }) {
             </div>
 
             <div className="pt-2 flex flex-wrap items-center gap-6">
-              <a
-                href="https://maps.google.com/?q=Industrial+Area+4+Al+Senaiyat+Al+Sharjah"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-2 text-xs font-mono tracking-[0.18em] uppercase text-copper hover:text-charcoal transition-colors font-semibold"
-              >
+              <span className="inline-flex items-center gap-2 text-xs font-mono tracking-[0.18em] uppercase text-copper font-semibold cursor-default">
                 <span>GET DIRECTIONS</span>
                 <ArrowRight className="w-3.5 h-3.5" />
-              </a>
+              </span>
 
               <div className="flex items-center gap-4 text-warmgrey">
-                <a
-                  href="https://instagram.com"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="hover:text-copper transition-colors flex items-center gap-1.5 text-xs font-mono uppercase"
-                  aria-label="Instagram"
-                >
+                <span className="flex items-center gap-1.5 text-xs font-mono uppercase cursor-default">
                   <InstagramIcon className="w-4 h-4 text-copper" />
                   <span>Instagram</span>
-                </a>
-                <a
-                  href="https://linkedin.com"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="hover:text-copper transition-colors flex items-center gap-1.5 text-xs font-mono uppercase"
-                  aria-label="LinkedIn"
-                >
+                </span>
+                <span className="flex items-center gap-1.5 text-xs font-mono uppercase cursor-default">
                   <LinkedinIcon className="w-4 h-4 text-copper" />
                   <span>LinkedIn</span>
-                </a>
+                </span>
               </div>
             </div>
           </div>
