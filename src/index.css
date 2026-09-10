@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  }
+  
+  body {
+    background-color: #FAF8F5;
+    color: #141414;
+    overflow-x: hidden;
+  }
+
+  #root {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  ::selection {
+    background-color: #9E532B;
+    color: #FAF8F5;
+  }
+}
+
+/* Architectural custom scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF8F5;
+}
+::-webkit-scrollbar-thumb {
+  background: #D8D2C7;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #9E532B;
+}
+
+/* Custom Technical Architectural Patterns */
+.bg-grid-ivory {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(158, 83, 43, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(158, 83, 43, 0.05) 1px, transparent 1px);
+}
+
+.bg-grid-charcoal {
+  background-size: 36px 36px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+}
+
+.bg-dots-copper {
+  background-size: 24px 24px;
+  background-image: radial-gradient(rgba(158, 83, 43, 0.18) 1px, transparent 1px);
+}
+
+/* Subtle Copper Gradient Text */
+.text-gradient-copper {
+  background: linear-gradient(135deg, #BA683A 0%, #9E532B 50%, #844321 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Architectural technical line */
+.technical-border {
+  border-color: rgba(158, 83, 43, 0.25);
+}
+
+/* Hide scrollbar for clean horizontal swipe on touch devices */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
