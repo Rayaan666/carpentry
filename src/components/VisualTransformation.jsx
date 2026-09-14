@@ -67,7 +67,7 @@ export default function VisualTransformation() {
   };
 
   return (
-    <section aria-label="Signature Architectural Transformation Exhibition Stand Showcase" className="bg-[#101010] text-white py-12 sm:py-16 lg:py-20 relative overflow-hidden border-b border-white/10">
+    <section aria-label="Signature Architectural Transformation Exhibition Stand Showcase" className="bg-[#101010] text-white py-6 sm:py-8 lg:py-10 relative overflow-hidden border-b border-white/10">
       {/* ImageGallery Schema.org Structured Data */}
       <script
         type="application/ld+json"

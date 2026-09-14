@@ -45,7 +45,7 @@ export default function IndustriesSection({ onOpenQuote }) {
   ];
 
   return (
-    <section className="relative bg-[#111111] text-white py-10 sm:py-12 lg:py-14 overflow-hidden border-b border-white/10">
+    <section className="relative bg-[#111111] text-white py-6 sm:py-8 lg:py-10 overflow-hidden border-b border-white/10">
       {/* Dynamic Background Image that shifts subtly on category hover */}
       <div className="absolute inset-0 z-0">
         {industries.map((ind, idx) => (

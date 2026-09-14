@@ -57,7 +57,7 @@ export default function CapabilitiesProcess() {
   };
 
   return (
-    <section id="capabilities" aria-label="Workshop to Venue Exhibition Fabrication Process UAE" className="bg-[#141414] text-white py-14 sm:py-18 lg:py-22 border-b border-white/10 relative overflow-hidden">
+    <section id="capabilities" aria-label="Workshop to Venue Exhibition Fabrication Process UAE" className="bg-[#141414] text-white py-6 sm:py-8 lg:py-10 border-b border-white/10 relative overflow-hidden">
       {/* HowTo Schema.org Structured Data */}
       <script
         type="application/ld+json"

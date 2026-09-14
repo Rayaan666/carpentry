@@ -20,7 +20,7 @@ export default function CallToAction({ onOpenQuote }) {
   };
 
   return (
-    <section aria-label="Request a Custom Exhibition Stand Quote & Joinery Inquiry UAE" className="relative bg-charcoal text-white py-12 sm:py-16 lg:py-20 overflow-hidden">
+    <section aria-label="Request a Custom Exhibition Stand Quote & Joinery Inquiry UAE" className="relative bg-charcoal text-white py-6 sm:py-8 lg:py-10 overflow-hidden">
       {/* ContactPoint Schema.org Structured Data */}
       <script
         type="application/ld+json"

@@ -81,8 +81,8 @@ export default function Hero({ onOpenQuote }) {
               className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-5"
             >
               <a
-                href="#capabilities"
-                className="bg-copper hover:bg-copper-hover text-white text-xs uppercase tracking-[0.2em] font-semibold px-8 py-4 flex items-center justify-center gap-3 transition-all duration-300 shadow-copper-sm hover:shadow-copper-lg group"
+                href="#projects"
+                className="bg-copper hover:bg-copper-hover text-white text-xs uppercase tracking-[0.2em] font-semibold px-8 py-4 flex items-center justify-center gap-3 transition-all duration-300 shadow-copper-sm hover:shadow-copper-lg group cursor-pointer"
               >
                 <span>VIEW OUR PROJECTS</span>
                 <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
@@ -90,7 +90,7 @@ export default function Hero({ onOpenQuote }) {
 
               <button
                 onClick={onOpenQuote}
-                className="bg-copper hover:bg-copper-hover text-white text-xs uppercase tracking-[0.2em] font-semibold px-8 py-4 flex items-center justify-center gap-3 transition-all duration-300 shadow-copper-sm hover:shadow-copper-lg group"
+                className="bg-copper hover:bg-copper-hover text-white text-xs uppercase tracking-[0.2em] font-semibold px-8 py-4 flex items-center justify-center gap-3 transition-all duration-300 shadow-copper-sm hover:shadow-copper-lg group cursor-pointer"
               >
                 <span>REQUEST A QUOTE</span>
                 <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
@@ -107,9 +107,12 @@ export default function Hero({ onOpenQuote }) {
           <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 sm:gap-8 lg:gap-12">
             {bottomCategories.map((item, idx) => (
               <div key={item} className="flex items-center gap-3 sm:gap-6">
-                <span className="text-[11px] sm:text-xs font-mono uppercase tracking-[0.22em] text-white/70 font-medium hover:text-copper transition-colors cursor-default">
+                <a
+                  href="#services"
+                  className="text-[11px] sm:text-xs font-mono uppercase tracking-[0.22em] text-white/70 font-medium hover:text-copper transition-colors cursor-pointer"
+                >
                   {item}
-                </span>
+                </a>
                 {idx < bottomCategories.length - 1 && (
                   <span className="w-1.5 h-1.5 rounded-full bg-copper/40 hidden sm:inline-block" />
                 )}

@@ -36,7 +36,7 @@ export default {
         }
       },
       fontFamily: {
-        display: ['Syne', 'sans-serif'],
+        display: ['Oswald', 'sans-serif'],
         sans: ['"Plus Jakarta Sans"', 'Inter', 'system-ui', 'sans-serif'],
         mono: ['"Space Grotesk"', 'monospace'],
       },

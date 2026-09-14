@@ -37,7 +37,7 @@ export default function ImpactStrip() {
   ];
 
   return (
-    <section className="bg-[#0B0B0B] text-white py-10 sm:py-12 border-y border-white/10 relative overflow-hidden">
+    <section className="bg-[#0B0B0B] text-white py-4 sm:py-6 border-y border-white/10 relative overflow-hidden">
       {/* Background Micro Dots */}
       <div className="absolute inset-0 bg-dots-copper opacity-20 pointer-events-none" />
 

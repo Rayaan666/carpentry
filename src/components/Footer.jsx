@@ -17,14 +17,30 @@ const LinkedinIcon = ({ className }) => (
   </svg>
 );
 
-export default function Footer({ onOpenQuote }) {
+export default function Footer({ onOpenQuote, onNavigate }) {
   const navigationLinks = [
     { name: 'Home', href: '#hero' },
     { name: 'About', href: '#about' },
     { name: 'Services', href: '#services' },
+    { name: 'Projects', href: '#projects' },
     { name: 'Capabilities', href: '#capabilities' },
     { name: 'Contact', href: '#contact' },
   ];
+
+  const handleNavClick = (e, link) => {
+    e.preventDefault();
+    if (onNavigate) {
+      if (link.name === 'About') {
+        onNavigate('about');
+      } else if (link.name === 'Home') {
+        onNavigate('home');
+      } else {
+        onNavigate('home', link.href);
+      }
+    } else {
+      window.location.hash = link.href;
+    }
+  };
 
   const servicesList = [
     'Exhibition Stand Fabrication',
@@ -45,7 +61,14 @@ export default function Footer({ onOpenQuote }) {
         <div className="border-b border-ivory-border pb-8 sm:pb-10 mb-8 sm:mb-10">
           <div className="flex flex-col lg:flex-row items-start lg:items-end justify-between gap-8">
             <div className="space-y-4">
-              <a href="#hero" className="inline-block group">
+              <a
+                href="#hero"
+                onClick={(e) => {
+                  e.preventDefault();
+                  if (onNavigate) onNavigate('home');
+                }}
+                className="inline-block group cursor-pointer"
+              >
                 <img
                   src="/logo.png"
                   alt="Pioneer Carpentry"
@@ -76,12 +99,14 @@ export default function Footer({ onOpenQuote }) {
             <ul className="space-y-3">
               {navigationLinks.map((link) => (
                 <li key={link.name}>
-                  <span
-                    className="text-sm text-charcoal/80 uppercase font-mono tracking-wider flex items-center gap-2 cursor-default"
+                  <a
+                    href={link.href}
+                    onClick={(e) => handleNavClick(e, link)}
+                    className="text-sm text-charcoal/80 hover:text-copper transition-colors uppercase font-mono tracking-wider flex items-center gap-2 cursor-pointer group"
                   >
-                    <span className="w-1.5 h-1.5 rounded-full bg-copper/40" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-copper/40 group-hover:bg-copper transition-colors" />
                     <span>{link.name}</span>
-                  </span>
+                  </a>
                 </li>
               ))}
             </ul>
@@ -95,12 +120,13 @@ export default function Footer({ onOpenQuote }) {
             <ul className="space-y-3">
               {servicesList.map((service) => (
                 <li key={service}>
-                  <span
-                    className="text-left text-sm text-charcoal/80 uppercase font-mono tracking-wider flex items-center gap-2 cursor-default"
+                  <button
+                    onClick={onOpenQuote}
+                    className="text-left text-sm text-charcoal/80 hover:text-copper transition-colors uppercase font-mono tracking-wider flex items-center gap-2 cursor-pointer group"
                   >
-                    <span className="w-1.5 h-1.5 rounded-full bg-copper/40" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-copper/40 group-hover:bg-copper transition-colors" />
                     <span>{service}</span>
-                  </span>
+                  </button>
                 </li>
               ))}
             </ul>
@@ -115,12 +141,16 @@ export default function Footer({ onOpenQuote }) {
             <div className="space-y-4 text-sm font-light text-charcoal/85">
               <div className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-copper shrink-0" />
-                <span className="cursor-default">info@leadevents.com</span>
+                <a href="mailto:info@leadevents.com" className="hover:text-copper transition-colors">
+                  info@leadevents.com
+                </a>
               </div>
 
               <div className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-copper shrink-0" />
-                <span className="cursor-default">+971 50 9689671</span>
+                <a href="tel:+971509689671" className="hover:text-copper transition-colors">
+                  +971 50 9689671
+                </a>
               </div>
 
               <div className="flex items-start gap-3">
@@ -134,20 +164,35 @@ export default function Footer({ onOpenQuote }) {
             </div>
 
             <div className="pt-2 flex flex-wrap items-center gap-6">
-              <span className="inline-flex items-center gap-2 text-xs font-mono tracking-[0.18em] uppercase text-copper font-semibold cursor-default">
+              <a
+                href="https://maps.google.com/?q=Sharjah+Industrial+Area+4+UAE"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-xs font-mono tracking-[0.18em] uppercase text-copper font-semibold hover:underline cursor-pointer"
+              >
                 <span>GET DIRECTIONS</span>
                 <ArrowRight className="w-3.5 h-3.5" />
-              </span>
+              </a>
 
               <div className="flex items-center gap-4 text-warmgrey">
-                <span className="flex items-center gap-1.5 text-xs font-mono uppercase cursor-default">
+                <a
+                  href="https://instagram.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1.5 text-xs font-mono uppercase hover:text-copper transition-colors cursor-pointer"
+                >
                   <InstagramIcon className="w-4 h-4 text-copper" />
                   <span>Instagram</span>
-                </span>
-                <span className="flex items-center gap-1.5 text-xs font-mono uppercase cursor-default">
+                </a>
+                <a
+                  href="https://linkedin.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1.5 text-xs font-mono uppercase hover:text-copper transition-colors cursor-pointer"
+                >
                   <LinkedinIcon className="w-4 h-4 text-copper" />
                   <span>LinkedIn</span>
-                </span>
+                </a>
               </div>
             </div>
           </div>

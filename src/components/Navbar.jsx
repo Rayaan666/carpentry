@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ArrowUpRight, Phone, Mail, MapPin } from 'lucide-react';
 
-export default function Navbar({ onOpenQuote }) {
+export default function Navbar({ onOpenQuote, currentPage = 'home', onNavigate }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -18,9 +18,26 @@ export default function Navbar({ onOpenQuote }) {
     { name: 'Home', href: '#hero' },
     { name: 'About', href: '#about' },
     { name: 'Services', href: '#services' },
+    { name: 'Projects', href: '#projects' },
     { name: 'Capabilities', href: '#capabilities' },
     { name: 'Contact', href: '#contact' },
   ];
+
+  const handleLinkClick = (e, link) => {
+    e.preventDefault();
+    if (onNavigate) {
+      if (link.name === 'About') {
+        onNavigate('about');
+      } else if (link.name === 'Home') {
+        onNavigate('home');
+      } else {
+        onNavigate('home', link.href);
+      }
+    } else {
+      window.location.hash = link.href;
+    }
+    setMobileMenuOpen(false);
+  };
 
   return (
     <>
@@ -31,7 +48,14 @@ export default function Navbar({ onOpenQuote }) {
       >
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 flex items-center justify-between">
           {/* Logo */}
-          <a href="#hero" className="flex items-center group transition-transform duration-300 hover:scale-[1.02]">
+          <a
+            href="#hero"
+            onClick={(e) => {
+              e.preventDefault();
+              if (onNavigate) onNavigate('home');
+            }}
+            className="flex items-center group transition-transform duration-300 hover:scale-[1.02] cursor-pointer"
+          >
             <img
               src="/logo.png"
               alt="Pioneer Carpentry"
@@ -40,22 +64,38 @@ export default function Navbar({ onOpenQuote }) {
           </a>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden md:flex items-center space-x-8 lg:space-x-10">
-            {navLinks.map((link) => (
-              <span
-                key={link.name}
-                className="text-xs uppercase tracking-[0.18em] font-medium py-1 text-charcoal cursor-default"
-              >
-                {link.name}
-              </span>
-            ))}
+          <nav className="hidden md:flex items-center space-x-6 lg:space-x-8">
+            {navLinks.map((link) => {
+              const isActive =
+                (link.name === 'About' && currentPage === 'about') ||
+                (link.name === 'Home' && currentPage === 'home' && !isScrolled);
+              return (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  onClick={(e) => handleLinkClick(e, link)}
+                  className={`text-xs uppercase tracking-[0.18em] font-medium py-1 transition-colors cursor-pointer relative ${
+                    isActive ? 'text-copper font-semibold' : 'text-charcoal hover:text-copper'
+                  }`}
+                >
+                  <span>{link.name}</span>
+                  {isActive && (
+                    <motion.div
+                      layoutId="activeNavIndicator"
+                      className="absolute bottom-0 left-0 right-0 h-[2px] bg-copper"
+                    />
+                  )}
+                </a>
+              );
+            })}
           </nav>
 
           {/* CTA Button */}
           <div className="hidden md:flex items-center space-x-4">
             <button
               type="button"
-              className="text-xs uppercase tracking-[0.16em] font-semibold px-6 py-2.5 rounded-none border border-copper bg-copper text-white flex items-center gap-2 shadow-sm cursor-default"
+              onClick={onOpenQuote}
+              className="text-xs uppercase tracking-[0.16em] font-semibold px-6 py-2.5 rounded-none border border-copper bg-copper hover:bg-copper-hover text-white flex items-center gap-2 shadow-sm transition-colors cursor-pointer"
             >
               <span>REQUEST A QUOTE</span>
               <ArrowUpRight className="w-3.5 h-3.5" />
@@ -66,7 +106,7 @@ export default function Navbar({ onOpenQuote }) {
           <div className="flex md:hidden items-center">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 transition-colors duration-200 text-charcoal"
+              className="p-2 transition-colors duration-200 text-charcoal cursor-pointer"
               aria-label="Toggle navigation menu"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -91,25 +131,36 @@ export default function Navbar({ onOpenQuote }) {
                   Events • Exhibitions • Fabrication
                 </span>
               </div>
-              <div className="flex flex-col space-y-4">
+              <div className="flex flex-col space-y-3">
                 {navLinks.map((link, idx) => (
-                  <motion.div
+                  <motion.a
                     key={link.name}
+                    href={link.href}
+                    onClick={(e) => handleLinkClick(e, link)}
                     initial={{ opacity: 0, x: -15 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.05 * idx }}
-                    className="text-xl font-display uppercase tracking-wider text-white flex items-center justify-between py-2 border-b border-white/5 cursor-default"
+                    className={`text-lg font-display uppercase tracking-wider flex items-center justify-between py-2 border-b border-white/5 cursor-pointer transition-colors ${
+                      (link.name === 'About' && currentPage === 'about') ||
+                      (link.name === 'Home' && currentPage === 'home')
+                        ? 'text-copper font-bold'
+                        : 'text-white hover:text-copper'
+                    }`}
                   >
                     <span>{link.name}</span>
                     <span className="text-xs font-mono text-copper/60">0{idx + 1}</span>
-                  </motion.div>
+                  </motion.a>
                 ))}
               </div>
 
               <div className="pt-4">
                 <button
                   type="button"
-                  className="w-full bg-copper text-white text-xs uppercase tracking-[0.2em] py-4 flex items-center justify-center gap-2 font-medium cursor-default"
+                  onClick={() => {
+                    onOpenQuote();
+                    setMobileMenuOpen(false);
+                  }}
+                  className="w-full bg-copper hover:bg-copper-hover text-white text-xs uppercase tracking-[0.2em] py-4 flex items-center justify-center gap-2 font-medium transition-colors cursor-pointer"
                 >
                   <span>REQUEST A QUOTE</span>
                   <ArrowUpRight className="w-4 h-4" />
