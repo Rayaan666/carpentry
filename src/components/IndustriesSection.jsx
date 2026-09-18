@@ -8,9 +8,9 @@ export default function IndustriesSection({ onOpenQuote }) {
   const industries = [
     {
       name: 'EXHIBITIONS',
-      desc: 'Dubai World Trade Centre, ADNEC, Expo City Dubai & GCC pavilions.',
+      desc: 'Major trade shows, brand activations, and exhibition pavilions.',
       image: '/images/hero-main.jpg',
-      stat: 'DWTC • ADNEC • EXPO CITY',
+      stat: 'EXHIBITION HALLS • PAVILIONS',
     },
     {
       name: 'CORPORATE EVENTS',

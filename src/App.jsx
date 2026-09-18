@@ -7,21 +7,26 @@ import CapabilitiesProcess from './components/CapabilitiesProcess';
 import VisualTransformation from './components/VisualTransformation';
 import WhyPioneer from './components/WhyPioneer';
 import ImpactStrip from './components/ImpactStrip';
-import IndustriesSection from './components/IndustriesSection';
 import CallToAction from './components/CallToAction';
 import Footer from './components/Footer';
 import QuoteModal from './components/QuoteModal';
 import AboutPage from './components/AboutPage';
+import ServicesPage from './components/ServicesPage';
 
 export default function App() {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [currentPage, setCurrentPage] = useState(() => {
+    if (window.location.hash.includes('service') || window.location.pathname.includes('/service')) {
+      return 'services';
+    }
     return window.location.hash.includes('about') || window.location.pathname === '/about' ? 'about' : 'home';
   });
 
   useEffect(() => {
     const handleHashChange = () => {
-      if (window.location.hash.includes('about')) {
+      if (window.location.hash.includes('service')) {
+        setCurrentPage('services');
+      } else if (window.location.hash.includes('about')) {
         setCurrentPage('about');
       } else if (
         window.location.hash === '#home' ||
@@ -39,7 +44,16 @@ export default function App() {
     // Always start at top of page when switching pages
     window.scrollTo(0, 0);
 
-    if (currentPage === 'about') {
+    if (currentPage === 'services') {
+      document.title = 'Exhibition & Event Fabrication Services UAE | Pioneer Carpentry';
+      const metaDesc = document.querySelector('meta[name="description"]');
+      if (metaDesc) {
+        metaDesc.setAttribute(
+          'content',
+          "Explore Pioneer Carpentry's exhibition stand, event stage, kiosk, brand activation, custom fabrication and installation services across the UAE."
+        );
+      }
+    } else if (currentPage === 'about') {
       document.title = 'About Pioneer Carpentry | Exhibition & Event Fabrication UAE';
       const metaDesc = document.querySelector('meta[name="description"]');
       if (metaDesc) {
@@ -64,7 +78,17 @@ export default function App() {
     setCurrentPage(page);
     window.scrollTo(0, 0);
 
-    if (page === 'about') {
+    if (page === 'services') {
+      if (targetHash) {
+        window.location.hash = targetHash.replace('#', '');
+        setTimeout(() => {
+          const el = document.querySelector(targetHash);
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
+        }, 80);
+      } else {
+        window.location.hash = 'services';
+      }
+    } else if (page === 'about') {
       window.location.hash = 'about';
     } else {
       if (targetHash) {
@@ -91,8 +115,15 @@ export default function App() {
         onNavigate={handleNavigate}
       />
 
-      {/* Main Content: About Page or Home Page */}
-      {currentPage === 'about' ? (
+      {/* Main Content: Services Page, About Page, or Home Page */}
+      {currentPage === 'services' ? (
+        <main className="flex-1 flex flex-col">
+          <ServicesPage
+            onOpenQuote={handleOpenQuote}
+            onNavigate={handleNavigate}
+          />
+        </main>
+      ) : currentPage === 'about' ? (
         <main className="flex-1 flex flex-col">
           <AboutPage
             onOpenQuote={handleOpenQuote}
@@ -122,19 +153,17 @@ export default function App() {
           {/* 09 — Numbers / Impact Strip */}
           <ImpactStrip />
 
-          {/* 10 — Industries / Where We Build */}
-          <IndustriesSection onOpenQuote={handleOpenQuote} />
-
           {/* 11 — CTA / Start A Project */}
           <CallToAction onOpenQuote={handleOpenQuote} />
         </main>
       )}
 
       {/* 12 — Footer */}
-      <Footer onOpenQuote={handleOpenQuote} onNavigate={handleNavigate} />
+      <Footer onOpenQuote={handleOpenQuote} onNavigate={handleNavigate} currentPage={currentPage} />
 
       {/* Interactive Project Inquiry & Quote Modal */}
       <QuoteModal isOpen={quoteModalOpen} onClose={handleCloseQuote} />
     </div>
   );
 }
+

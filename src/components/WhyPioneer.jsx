@@ -23,7 +23,7 @@ export default function WhyPioneer() {
       num: '03',
       code: 'DEADLINE GUARANTEE',
       title: 'BUILT FOR DEADLINES',
-      description: 'Strict production timelines built around non-negotiable event launches across Dubai World Trade Centre (DWTC) and ADNEC Abu Dhabi.',
+      description: 'Strict production timelines built around non-negotiable event launches across major UAE trade show venues.',
       spec: '24/7 LIVE VENUE SUPPORT',
     },
     {

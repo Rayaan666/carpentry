@@ -6,10 +6,10 @@ export default function CallToAction({ onOpenQuote }) {
   const ctaSchema = {
     '@context': 'https://schema.org',
     '@type': 'ContactPoint',
-    telephone: '+971509689671',
+    telephone: '+97165259878',
     contactType: 'sales & estimation',
-    email: 'info@leadevents.com',
-    areaServed: ['Dubai', 'Abu Dhabi', 'Sharjah', 'United Arab Emirates', 'GCC'],
+    email: 'Charles@pioneerexhibition.ae',
+    areaServed: ['United Arab Emirates'],
     availableLanguage: ['English', 'Arabic'],
     hoursAvailable: {
       '@type': 'OpeningHoursSpecification',
@@ -52,7 +52,7 @@ export default function CallToAction({ onOpenQuote }) {
           </div>
 
           {/* Main Section Heading */}
-          <h2 className="text-4xl sm:text-6xl lg:text-7xl font-display font-extrabold uppercase tracking-tight text-white leading-[1.03] mb-4">
+          <h2 className="text-4xl sm:text-6xl lg:text-7xl font-display font-extrabold uppercase tracking-tight text-white leading-[0.95] mb-4">
             LET'S TURN <br />
             <span className="text-copper">YOUR IDEA</span> <br />
             INTO REALITY.
@@ -60,14 +60,14 @@ export default function CallToAction({ onOpenQuote }) {
 
           {/* Supporting Copy rich in intent keywords */}
           <p className="text-base sm:text-xl text-[#FAF8F5]/80 font-light leading-relaxed max-w-xl mb-6">
-            Planning an upcoming event or trade show? Request a fast, transparent quote from our expert <strong className="font-normal text-white">Sharjah joinery workshop</strong> and <strong className="font-normal text-white">Dubai exhibition stand builders</strong>.
+            Planning an upcoming event or trade show? Request a fast, transparent quote from our expert <strong className="font-normal text-white">Sharjah joinery workshop</strong> and <strong className="font-normal text-white">exhibition stand builders</strong>.
           </p>
 
           {/* Micro Trust Indicators for High Conversion */}
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2 mb-6 text-xs font-mono text-copper font-medium uppercase tracking-wider">
             <span>✓ Fast 24-Hour Quotation</span>
-            <span>✓ In-House Sharjah Workshop</span>
-            <span>✓ DWTC & ADNEC Approved</span>
+            <span>✓ In-House Workshop Fabrication</span>
+            <span>✓ Turnkey Event Delivery</span>
           </div>
 
           {/* Dual Action CTAs */}
@@ -82,12 +82,12 @@ export default function CallToAction({ onOpenQuote }) {
             </button>
 
             <a
-              href="tel:+971509689671"
-              aria-label="Call Pioneer Carpentry direct phone line +971 50 9689671"
-              className="border border-white/30 hover:border-copper hover:text-copper bg-black/30 hover:bg-black/50 text-white text-xs uppercase tracking-[0.18em] font-medium px-8 py-4 flex items-center justify-center gap-3 transition-all duration-300 backdrop-blur-sm"
+              href="tel:+97165259878"
+              aria-label="Call Pioneer Carpentry direct phone line +971 6 525 9878"
+              className="bg-copper hover:bg-copper-hover text-white text-xs uppercase tracking-[0.2em] font-semibold px-9 py-4 flex items-center justify-center gap-3 transition-all duration-300 shadow-copper-sm hover:shadow-copper-lg group cursor-pointer"
             >
-              <Phone className="w-4 h-4 text-copper" />
-              <span>+971 50 9689671</span>
+              <Phone className="w-4 h-4" />
+              <span>+971 6 525 9878</span>
             </a>
           </div>
 
@@ -95,8 +95,8 @@ export default function CallToAction({ onOpenQuote }) {
           <div className="mt-5 flex flex-wrap items-center gap-4 text-xs font-mono text-white/50">
             <span>DIRECT WORKSHOP ESTIMATION</span>
             <span>•</span>
-            <a href="mailto:info@leadevents.com" className="hover:text-copper transition-colors">
-              info@leadevents.com
+            <a href="mailto:Charles@pioneerexhibition.ae" className="hover:text-copper transition-colors">
+              Charles@pioneerexhibition.ae
             </a>
             <span>•</span>
             <span className="text-white/40">Sharjah Industrial Area 4, UAE</span>

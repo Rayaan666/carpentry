@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowUpRight, ArrowRight, Mail, Phone, MapPin } from 'lucide-react';
+import { ArrowUpRight, ArrowRight, Mail, Phone, MapPin, Globe } from 'lucide-react';
 
 const InstagramIcon = ({ className }) => (
   <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -17,7 +17,7 @@ const LinkedinIcon = ({ className }) => (
   </svg>
 );
 
-export default function Footer({ onOpenQuote, onNavigate }) {
+export default function Footer({ onOpenQuote, onNavigate, currentPage = 'home' }) {
   const navigationLinks = [
     { name: 'Home', href: '#hero' },
     { name: 'About', href: '#about' },
@@ -32,6 +32,8 @@ export default function Footer({ onOpenQuote, onNavigate }) {
     if (onNavigate) {
       if (link.name === 'About') {
         onNavigate('about');
+      } else if (link.name === 'Services') {
+        onNavigate('services');
       } else if (link.name === 'Home') {
         onNavigate('home');
       } else {
@@ -43,12 +45,12 @@ export default function Footer({ onOpenQuote, onNavigate }) {
   };
 
   const servicesList = [
-    'Exhibition Stand Fabrication',
-    'Event Stage Fabrication',
-    'Brand Activations',
-    'Kiosks & Displays',
-    'Custom Fabrication',
-    'Installation & Finishing',
+    { name: 'Exhibition Stand Fabrication', target: '#exhibitions' },
+    { name: 'Event Stage Fabrication', target: '#events-stages' },
+    { name: 'Brand Activations', target: '#brand-experiences' },
+    { name: 'Kiosks & Displays', target: '#exhibitions' },
+    { name: 'Custom Fabrication', target: '#custom-brief' },
+    { name: 'Installation & Finishing', target: '#site-execution' },
   ];
 
   return (
@@ -82,7 +84,7 @@ export default function Footer({ onOpenQuote, onNavigate }) {
 
             <div className="max-w-md">
               <p className="text-sm text-warmgrey font-light leading-relaxed">
-                Specialist UAE fabrication company taking bespoke architectural concepts and turning them into reality across Dubai, Abu Dhabi, Sharjah, and the GCC.
+                Specialist UAE fabrication company taking bespoke architectural concepts and turning them into reality across the United Arab Emirates.
               </p>
             </div>
           </div>
@@ -97,18 +99,26 @@ export default function Footer({ onOpenQuote, onNavigate }) {
               NAVIGATION
             </div>
             <ul className="space-y-3">
-              {navigationLinks.map((link) => (
-                <li key={link.name}>
-                  <a
-                    href={link.href}
-                    onClick={(e) => handleNavClick(e, link)}
-                    className="text-sm text-charcoal/80 hover:text-copper transition-colors uppercase font-mono tracking-wider flex items-center gap-2 cursor-pointer group"
-                  >
-                    <span className="w-1.5 h-1.5 rounded-full bg-copper/40 group-hover:bg-copper transition-colors" />
-                    <span>{link.name}</span>
-                  </a>
-                </li>
-              ))}
+              {navigationLinks.map((link) => {
+                const isActive =
+                  (link.name === 'About' && currentPage === 'about') ||
+                  (link.name === 'Services' && currentPage === 'services') ||
+                  (link.name === 'Home' && currentPage === 'home');
+                return (
+                  <li key={link.name}>
+                    <a
+                      href={link.href}
+                      onClick={(e) => handleNavClick(e, link)}
+                      className={`text-sm transition-colors uppercase font-mono tracking-wider flex items-center gap-2 cursor-pointer group ${
+                        isActive ? 'text-copper font-bold' : 'text-charcoal/80 hover:text-copper'
+                      }`}
+                    >
+                      <span className={`w-1.5 h-1.5 rounded-full transition-colors ${isActive ? 'bg-copper' : 'bg-copper/40 group-hover:bg-copper'}`} />
+                      <span>{link.name}</span>
+                    </a>
+                  </li>
+                );
+              })}
             </ul>
           </div>
 
@@ -119,13 +129,19 @@ export default function Footer({ onOpenQuote, onNavigate }) {
             </div>
             <ul className="space-y-3">
               {servicesList.map((service) => (
-                <li key={service}>
+                <li key={service.name}>
                   <button
-                    onClick={onOpenQuote}
+                    onClick={() => {
+                      if (onNavigate) {
+                        onNavigate('services', service.target);
+                      } else {
+                        onOpenQuote();
+                      }
+                    }}
                     className="text-left text-sm text-charcoal/80 hover:text-copper transition-colors uppercase font-mono tracking-wider flex items-center gap-2 cursor-pointer group"
                   >
                     <span className="w-1.5 h-1.5 rounded-full bg-copper/40 group-hover:bg-copper transition-colors" />
-                    <span>{service}</span>
+                    <span>{service.name}</span>
                   </button>
                 </li>
               ))}
@@ -141,15 +157,22 @@ export default function Footer({ onOpenQuote, onNavigate }) {
             <div className="space-y-4 text-sm font-light text-charcoal/85">
               <div className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-copper shrink-0" />
-                <a href="mailto:info@leadevents.com" className="hover:text-copper transition-colors">
-                  info@leadevents.com
+                <a href="mailto:Charles@pioneerexhibition.ae" className="hover:text-copper transition-colors">
+                  Charles@pioneerexhibition.ae
                 </a>
               </div>
 
               <div className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-copper shrink-0" />
-                <a href="tel:+971509689671" className="hover:text-copper transition-colors">
-                  +971 50 9689671
+                <a href="tel:+97165259878" className="hover:text-copper transition-colors">
+                  +971 6 525 9878
+                </a>
+              </div>
+
+              <div className="flex items-center gap-3">
+                <Globe className="w-4 h-4 text-copper shrink-0" />
+                <a href="https://pioneerexhibition.ae" target="_blank" rel="noopener noreferrer" className="hover:text-copper transition-colors">
+                  pioneerexhibition.ae
                 </a>
               </div>
 

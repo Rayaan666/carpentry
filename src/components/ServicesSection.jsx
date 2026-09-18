@@ -10,8 +10,8 @@ export default function ServicesSection({ onOpenQuote }) {
       num: '01',
       title: 'EXHIBITION STANDS',
       desc: 'Custom-built exhibition environments engineered around your brand.',
-      details: 'Turnkey exhibition stands, double-decker pavilions, hanging banners, VIP client lounges, and venue-approved structural fabrication across DWTC, ADNEC & Expo City Dubai.',
-      image: '/images/hero-main.jpg',
+      details: 'Turnkey exhibition stands, double-decker pavilions, hanging banners, VIP client lounges, and venue-approved structural fabrication across all major UAE exhibition venues.',
+      image: '/service/1.png',
       aspect: 'md:col-span-7 aspect-[16/10]',
     },
     {
@@ -19,7 +19,7 @@ export default function ServicesSection({ onOpenQuote }) {
       title: 'EVENTS & STAGES',
       desc: 'Stages, backdrops and complete structures for corporate and live events.',
       details: 'Modular speaker stages, keynote amphitheaters, geometric branded backdrops, LED video-wall support frameworks, and presidential podiums.',
-      image: '/images/project-stage-keynote.jpg',
+      image: '/service/2.png',
       aspect: 'md:col-span-5 aspect-[4/3] md:aspect-auto',
     },
     {
@@ -27,7 +27,7 @@ export default function ServicesSection({ onOpenQuote }) {
       title: 'BRAND ACTIVATIONS',
       desc: 'Immersive structures and installations designed to bring brands into the physical world.',
       details: 'Experiential experiential tunnels, interactive product launch displays, pop-up architectural pavilions, and high-impact mall activations.',
-      image: '/images/project-brand-activation.jpg',
+      image: '/service/5.png',
       aspect: 'md:col-span-4 aspect-[4/3]',
     },
     {
@@ -35,7 +35,7 @@ export default function ServicesSection({ onOpenQuote }) {
       title: 'KIOSKS & DISPLAYS',
       desc: 'Custom retail kiosks, display counters and branded presentation units.',
       details: 'Luxury retail kiosks, museum vitrines, display plinths with integrated concealed LED illumination, high-gloss lacquers, and metallic edge trims.',
-      image: '/images/kiosk-luxury.jpg',
+      image: '/service/4.png',
       aspect: 'md:col-span-4 aspect-[4/3]',
     },
     {
@@ -43,7 +43,7 @@ export default function ServicesSection({ onOpenQuote }) {
       title: 'CUSTOM FABRICATION',
       desc: 'Props, furniture, decorative elements, LED cladding and purpose-built structures.',
       details: 'Bespoke sculptural joinery, 3D brand emblems, acoustic slatted paneling, metallic copper/brass finishes, and complex architectural assemblies.',
-      image: '/images/service-custom.jpg',
+      image: '/service/9.png',
       aspect: 'md:col-span-4 aspect-[4/3]',
     },
   ];

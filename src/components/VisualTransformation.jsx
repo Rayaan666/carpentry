@@ -13,10 +13,10 @@ export default function VisualTransformation() {
       image: '/images/trans-01-concept.jpg',
       icon: Compass,
       tag: 'STAGE 01 // DRAFTING & CAD BLUEPRINTS',
-      description: 'Orthographic projections, isometric structural breakdowns, axonometric sightlines, and joinery engineering designed to exact venue specifications across DWTC & ADNEC.',
+      description: 'Orthographic projections, isometric structural breakdowns, axonometric sightlines, and joinery engineering designed to exact venue specifications.',
       attributes: [
         'Detailed Millimeter Tolerances',
-        'DWTC & ADNEC Fire Compliance',
+        'UAE Venue Fire & Safety Compliance',
         'Structural Load Calculations',
         '3D Exploded Cladding Files',
       ]
@@ -57,7 +57,7 @@ export default function VisualTransformation() {
     '@context': 'https://schema.org',
     '@type': 'ImageGallery',
     name: 'Pioneer Carpentry Exhibition Stand Transformation Showcase',
-    description: 'Visual transformation of exhibition stand fabrication from 2D CAD blueprint drawing, to Sharjah workshop production, to live venue launch in Dubai DWTC.',
+    description: 'Visual transformation of exhibition stand fabrication from 2D CAD blueprint drawing, to Sharjah workshop production, to live venue launch.',
     image: stages.map((s) => ({
       '@type': 'ImageObject',
       name: s.label,

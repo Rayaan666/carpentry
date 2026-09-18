@@ -35,7 +35,7 @@ export default function AboutPage({ onOpenQuote, onNavigateHome }) {
       title: 'UNDERSTAND',
       subtitle: 'The Architectural Brief',
       desc: 'We study the brief, space, brand and functional requirements. Every sightline, venue restriction, and visitor circulation pathway is analyzed before a single cut is made.',
-      technicalSpec: 'VENUE AUDIT • TRAFFIC FLOW • DWTC / ADNEC REGULATIONS',
+      technicalSpec: 'VENUE AUDIT • TRAFFIC FLOW • UAE VENUE REGULATIONS',
       image: '/images/trans-01-concept.jpg',
     },
     {
@@ -100,29 +100,7 @@ export default function AboutPage({ onOpenQuote, onNavigateHome }) {
     },
   ];
 
-  // 06 — Pioneer Approach Principles
-  const approachPrinciples = [
-    {
-      num: '01',
-      title: 'UNDERSTAND THE SPACE',
-      desc: 'Every project begins with the real environment it needs to occupy. We analyze venue ceiling heights, rigging capacities, and audience approach angles.',
-    },
-    {
-      num: '02',
-      title: 'FABRICATE FOR FUNCTION',
-      desc: 'Structures must not only look good, they must work physically. Hidden cable chaseways, concealed access hatches, and structural stability are built into the core.',
-    },
-    {
-      num: '03',
-      title: 'FINISH WITH INTENT',
-      desc: 'Materials, surfaces and details are treated as part of the final experience. No raw edges, no visible screwheads, and no inconsistent texture transitions.',
-    },
-    {
-      num: '04',
-      title: 'INSTALL WITH CONTROL',
-      desc: 'The final stage is executed on-site with care and coordination. Our venue staging team is disciplined, polite, fully accredited, and equipped for rapid handover.',
-    },
-  ];
+
 
   // 08 — Capabilities Grid
   const capabilities = [
@@ -183,7 +161,7 @@ export default function AboutPage({ onOpenQuote, onNavigateHome }) {
     {
       num: '03',
       title: 'PROJECT FLEXIBILITY',
-      desc: 'Solutions adapted to scale, venue and requirements. Whether an intimate luxury counter or a 500 sqm double-deck DWTC pavilion, we scale smoothly.',
+      desc: 'Solutions adapted to scale, venue and requirements. Whether an intimate luxury counter or a 500 sqm double-deck exhibition pavilion, we scale smoothly.',
     },
     {
       num: '04',
@@ -230,11 +208,11 @@ export default function AboutPage({ onOpenQuote, onNavigateHome }) {
     {
       id: 'stage-3',
       code: 'PHASE 03',
-      label: 'DWTC VENUE LAUNCH',
+      label: 'UAE VENUE LAUNCH',
       title: 'LIVE EXHIBITION PAVILION',
       image: '/images/trans-03-experience.jpg',
       specCode: 'SEC-03 // LIVE EVENT HANDOVER',
-      span: 'VENUE: DUBAI WORLD TRADE CENTRE',
+      span: 'VENUE: UAE EVENT PAVILION',
       tol: 'HANDOVER: 24H AHEAD',
       caption: 'Turnkey 24/7 venue build, laser leveling, concealed wiring & VIP handover.',
       detailImg: '/images/hero-main.jpg',
@@ -251,9 +229,9 @@ export default function AboutPage({ onOpenQuote, onNavigateHome }) {
     mainEntity: {
       '@type': 'Organization',
       name: 'Pioneer Carpentry & Exhibition Fabrication',
-      url: 'https://pioneercarpentry.ae',
-      telephone: '+971509689671',
-      email: 'info@leadevents.com',
+      url: 'https://pioneerexhibition.ae',
+      telephone: '+97165259878',
+      email: 'Charles@pioneerexhibition.ae',
       address: {
         '@type': 'PostalAddress',
         streetAddress: 'Unit 01, Industrial Area 4, Al Senaiyat',
@@ -265,7 +243,7 @@ export default function AboutPage({ onOpenQuote, onNavigateHome }) {
         '@type': 'Place',
         name: 'Sharjah, UAE',
       },
-      areaServed: ['Dubai', 'Abu Dhabi', 'Sharjah', 'United Arab Emirates', 'GCC'],
+      areaServed: ['United Arab Emirates'],
     },
   };
 
@@ -362,7 +340,7 @@ export default function AboutPage({ onOpenQuote, onNavigateHome }) {
               <div className="h-8 w-px bg-white/15 hidden sm:block" />
               <div>
                 <div className="text-[10px] font-mono text-copper tracking-widest uppercase font-bold">VENUES</div>
-                <div className="text-sm font-display font-extrabold text-white uppercase mt-0.5">DWTC & ADNEC</div>
+                <div className="text-sm font-display font-extrabold text-white uppercase mt-0.5">UAE WIDE</div>
               </div>
               <div className="h-8 w-px bg-white/15 hidden sm:block" />
               <div>
@@ -454,7 +432,7 @@ export default function AboutPage({ onOpenQuote, onNavigateHome }) {
 
               <div className="space-y-4 text-base sm:text-lg text-charcoal/80 font-light leading-relaxed">
                 <p>
-                  Pioneer Carpentry is a UAE specialist fabrication company turning complex architectural concepts into physical venue environments across <strong className="font-semibold text-charcoal">Dubai (DWTC)</strong>, <strong className="font-semibold text-charcoal">Abu Dhabi (ADNEC)</strong>, and the GCC.
+                  Pioneer Carpentry is a UAE specialist fabrication company turning complex architectural concepts into physical venue environments across the United Arab Emirates.
                 </p>
                 <p className="text-sm sm:text-base text-warmgrey leading-relaxed">
                   Operating from our <strong className="font-semibold text-charcoal">15,000+ sq ft Sharjah joinery facility</strong>, we manage multi-axis CNC woodworking, structural steel, lacquer finishing, and 24/7 venue staging completely in-house — delivering precision craftsmanship with zero delays.
@@ -505,53 +483,7 @@ export default function AboutPage({ onOpenQuote, onNavigateHome }) {
 
           </div>
 
-          {/* 4 Clean Capability Cards (Horizontal & Uncluttered) */}
-          <div className="pt-8 border-t border-[#E2DDD5]">
-            <div className="text-xs font-mono text-copper uppercase tracking-[0.2em] font-bold mb-8">
-              CORE FABRICATION SERVICES // UAE & GCC
-            </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {[
-                {
-                  num: '01',
-                  title: 'EXHIBITION STANDS',
-                  desc: 'Turnkey double-deck pavilions, VIP lounges & DWTC venue builds.',
-                },
-                {
-                  num: '02',
-                  title: 'JOINERY WORKSHOP',
-                  desc: 'Custom CNC woodworking, automotive spray lacquer & timber paneling.',
-                },
-                {
-                  num: '03',
-                  title: 'EVENT STAGES',
-                  desc: 'Heavy-duty plenary stages, speaker podiums & LED screen cladding.',
-                },
-                {
-                  num: '04',
-                  title: 'BRAND ACTIVATIONS',
-                  desc: 'Experiential retail kiosks, pop-up modules & 3D sculptural props.',
-                },
-              ].map((service, idx) => (
-                <div
-                  key={idx}
-                  className="p-6 bg-white border border-[#E2DDD5] hover:border-copper transition-all duration-300 group relative"
-                >
-                  <div className="text-2xl font-display font-extrabold text-copper/40 group-hover:text-copper transition-colors mb-3">
-                    {service.num}
-                  </div>
-                  <h4 className="text-base font-display font-bold uppercase text-charcoal mb-2">
-                    {service.title}
-                  </h4>
-                  <p className="text-xs text-warmgrey leading-relaxed font-light">
-                    {service.desc}
-                  </p>
-                  <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-copper scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
-                </div>
-              ))}
-            </div>
-          </div>
 
         </div>
       </section>
@@ -762,150 +694,7 @@ export default function AboutPage({ onOpenQuote, onNavigateHome }) {
       </section>
 
 
-      {/* ==================================================
-          05 — WORKSHOP / FABRICATION CULTURE
-          ================================================== */}
-      <section
-        id="workshop-culture"
-        aria-label="Pioneer Workshop and Fabrication Culture"
-        className="relative bg-black text-white pt-8 sm:pt-12 pb-8 sm:pb-12 overflow-hidden border-b border-white/10"
-      >
-        {/* Full-width Cinematic Workshop Image Background */}
-        <div className="absolute inset-0 z-0">
-          <img
-            src="/images/trans-02-workshop.jpg"
-            alt="Pioneer Carpentry Fabrication Culture Sharjah Facility"
-            className="w-full h-full object-cover object-center brightness-[0.45] contrast-[1.15] scale-105"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-black/80" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black" />
-        </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-          <div className="max-w-3xl space-y-6">
-            <div className="inline-flex items-center gap-3">
-              <span className="w-8 h-[1.5px] bg-copper inline-block" />
-              <span className="text-xs uppercase tracking-[0.25em] font-mono text-copper font-semibold">
-                WORKSHOP CULTURE // AL SENAIYAT, SHARJAH
-              </span>
-            </div>
-
-            <h2 className="text-4xl sm:text-6xl lg:text-7xl font-display font-extrabold uppercase tracking-tight text-white leading-[1.03]">
-              WHERE IDEAS <br />
-              <span className="text-copper">BECOME PHYSICAL.</span>
-            </h2>
-
-            <p className="text-lg sm:text-2xl text-[#FAF8F5]/90 font-light leading-relaxed max-w-2xl border-l-2 border-copper pl-6 py-1">
-              "Our workshop is where drawings become structures, materials become finishes and details become experiences."
-            </p>
-
-            <p className="text-sm sm:text-base text-white/70 font-light max-w-xl leading-relaxed">
-              Equipped with precision CNC routers, heavy-duty timber joinery machinery, dedicated spray-painting booths, and modular dry-run assembly zones, our facility gives architects, brand agencies, and event organizers total confidence.
-            </p>
-          </div>
-
-          {/* Capabilities Horizontal Strip */}
-          <div className="mt-8 pt-6 border-t border-white/15">
-            <div className="text-[11px] font-mono tracking-[0.25em] text-copper uppercase font-semibold mb-4">
-              IN-HOUSE PRODUCTION CAPABILITIES
-            </div>
-            <div className="flex flex-wrap items-center gap-x-6 gap-y-3 text-xs sm:text-sm font-mono tracking-wider text-white/80">
-              {[
-                'CARPENTRY',
-                'STRUCTURAL FABRICATION',
-                'CUSTOM FURNITURE',
-                'FINISHING',
-                'CLADDING',
-                'DISPLAY PRODUCTION',
-                'PROPS',
-                'INSTALLATION',
-              ].map((item, idx) => (
-                <div key={item} className="flex items-center gap-3">
-                  <span className="text-copper font-bold">✓</span>
-                  <span className="hover:text-copper transition-colors cursor-default">{item}</span>
-                  {idx < 7 && <span className="text-white/20 hidden sm:inline">•</span>}
-                </div>
-              ))}
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-
-      {/* ==================================================
-          06 — THE PIONEER APPROACH (Warm Off-white 2-Column)
-          ================================================== */}
-      <section
-        id="our-approach"
-        aria-label="The Pioneer Fabrication Approach"
-        className="bg-[#FAF8F5] text-charcoal pt-4 sm:pt-6 pb-8 sm:pb-12 border-b border-ivory-border relative overflow-hidden"
-      >
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-          
-          {/* Section Header */}
-          <div className="max-w-3xl mb-6 sm:mb-8">
-            <div className="inline-flex items-center gap-3 mb-3">
-              <span className="w-8 h-[1.5px] bg-copper inline-block" />
-              <span className="text-xs uppercase tracking-[0.25em] font-mono text-copper font-semibold">
-                OUR APPROACH
-              </span>
-            </div>
-            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-display font-extrabold uppercase tracking-tight text-charcoal leading-[1.05]">
-              BUILT AROUND <br />
-              <span className="text-copper">THE PROJECT.</span> <br />
-              NOT A TEMPLATE.
-            </h2>
-          </div>
-
-          {/* 2-Column Layout */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-            
-            {/* LEFT: 4 Principles */}
-            <div className="lg:col-span-7 space-y-8">
-              {approachPrinciples.map((principle) => (
-                <div key={principle.num} className="border-l-2 border-copper/30 hover:border-copper pl-6 py-1 transition-colors space-y-2 group">
-                  <div className="text-xs font-mono text-copper font-semibold tracking-widest uppercase">
-                    PRINCIPLE // {principle.num}
-                  </div>
-                  <h3 className="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-charcoal group-hover:text-copper transition-colors">
-                    {principle.title}
-                  </h3>
-                  <p className="text-sm sm:text-base text-warmgrey font-light leading-relaxed">
-                    {principle.desc}
-                  </p>
-                </div>
-              ))}
-            </div>
-
-            {/* RIGHT: Close-up Material & Fabrication Photography */}
-            <div className="lg:col-span-5">
-              <div className="relative bg-white border border-ivory-border p-4 shadow-architectural space-y-4">
-                <div className="aspect-[4/5] overflow-hidden bg-ivory-warm relative">
-                  <img
-                    src="/about/approach.png"
-                    alt="Pioneer Carpentry Precision Surface Craftsmanship and Wood Finishing"
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-transparent to-transparent" />
-                  
-                  <div className="absolute bottom-4 left-4 right-4 text-white text-xs font-mono">
-                    <span className="text-copper uppercase tracking-widest block font-bold">TACTILE LUXURY</span>
-                    <span>FLUSH REVEALS • AUTOMOTIVE LACQUERS • INTEGRATED LEDS</span>
-                  </div>
-                </div>
-
-                <div className="pt-2 text-xs font-mono text-warmgrey flex items-center justify-between border-t border-ivory-border">
-                  <span>PRECISION TOLERANCE: ±0.5MM</span>
-                  <span className="text-charcoal font-semibold">ZERO COMPROMISE</span>
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-      </section>
 
 
       {/* ==================================================
@@ -990,7 +779,7 @@ export default function AboutPage({ onOpenQuote, onNavigateHome }) {
             <div className="mt-4 pt-3 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-white/50">
               <span className="flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-copper" />
-                SHARJAH WORKSHOP (AL SENAIYAT) → DUBAI WORLD TRADE CENTRE (DWTC) & ADNEC
+                SHARJAH WORKSHOP (AL SENAIYAT) → UAE EVENT VENUE INSTALLATION
               </span>
               <span className="text-copper font-medium">ZERO VENUE SURPRISES</span>
             </div>
@@ -1037,10 +826,10 @@ export default function AboutPage({ onOpenQuote, onNavigateHome }) {
                 </div>
                 <div className="flex flex-wrap gap-2 text-xs font-mono">
                   {[
-                    'Dubai World Trade Centre (DWTC) • 25 Mins',
-                    'ADNEC Abu Dhabi • 75 Mins',
-                    'Expo City Dubai • 35 Mins',
-                    'Sharjah Expo Centre • 12 Mins',
+                    'Major UAE Exhibition Venues',
+                    'Trade Show Halls & Centers',
+                    'Event Arenas & Pavilions',
+                    'Sharjah Expo Centre',
                   ].map((venue) => (
                     <span key={venue} className="bg-white border border-ivory-border px-3 py-1.5 text-charcoal font-medium">
                       ✓ {venue}
@@ -1085,11 +874,11 @@ export default function AboutPage({ onOpenQuote, onNavigateHome }) {
                 </div>
 
                 <div className="pt-4 border-t border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs font-mono text-white/70">
-                  <a href="tel:+971509689671" className="hover:text-copper transition-colors">
-                    +971 50 9689671
+                  <a href="tel:+97165259878" className="hover:text-copper transition-colors">
+                    +971 6 525 9878
                   </a>
-                  <a href="mailto:info@leadevents.com" className="hover:text-copper transition-colors">
-                    info@leadevents.com
+                  <a href="mailto:Charles@pioneerexhibition.ae" className="hover:text-copper transition-colors">
+                    Charles@pioneerexhibition.ae
                   </a>
                 </div>
               </div>
@@ -1139,21 +928,22 @@ export default function AboutPage({ onOpenQuote, onNavigateHome }) {
               From exhibition stands to custom event structures, Pioneer Carpentry is ready to bring the next project into production.
             </p>
 
-            <div className="pt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+            <div className="pt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-5">
               <button
                 onClick={onOpenQuote}
-                className="bg-copper hover:bg-copper-hover text-white text-xs uppercase tracking-[0.2em] font-semibold px-9 py-4 flex items-center justify-center gap-3 transition-colors cursor-pointer shadow-copper-sm"
+                className="bg-copper hover:bg-copper-hover text-white text-xs uppercase tracking-[0.2em] font-semibold px-9 py-4 flex items-center justify-center gap-3 transition-all duration-300 shadow-copper-sm hover:shadow-copper-lg group cursor-pointer"
               >
                 <span>START A PROJECT</span>
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1.5" />
               </button>
 
               <a
-                href="tel:+971509689671"
-                className="border border-white/30 hover:border-copper hover:text-copper bg-black/40 text-white text-xs uppercase tracking-[0.18em] font-medium px-8 py-4 flex items-center justify-center gap-3 transition-colors cursor-pointer backdrop-blur-sm"
+                href="tel:+97165259878"
+                aria-label="Call Pioneer Carpentry direct phone line +971 6 525 9878"
+                className="bg-copper hover:bg-copper-hover text-white text-xs uppercase tracking-[0.2em] font-semibold px-9 py-4 flex items-center justify-center gap-3 transition-all duration-300 shadow-copper-sm hover:shadow-copper-lg group cursor-pointer"
               >
-                <Phone className="w-4 h-4 text-copper" />
-                <span>+971 50 9689671</span>
+                <Phone className="w-4 h-4" />
+                <span>+971 6 525 9878</span>
               </a>
             </div>
           </div>

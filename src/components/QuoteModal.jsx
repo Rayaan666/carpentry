@@ -10,7 +10,7 @@ export default function QuoteModal({ isOpen, onClose }) {
     company: '',
     email: '',
     phone: '',
-    venue: 'Dubai World Trade Centre (DWTC)',
+    venue: 'Exhibition Hall / Trade Center',
     dates: '',
     standDimensions: '',
     details: '',
@@ -29,12 +29,11 @@ export default function QuoteModal({ isOpen, onClose }) {
   ];
 
   const venueOptions = [
-    'Dubai World Trade Centre (DWTC)',
-    'ADNEC Abu Dhabi',
-    'Expo City Dubai',
-    'Sharjah Expo Center',
+    'Exhibition Hall / Trade Center',
+    'Convention Center',
     'Hotel Ballroom / Private Venue',
-    'Other UAE / GCC Location',
+    'Outdoor Event Arena',
+    'Other UAE Location',
   ];
 
   const handleSubmit = (e) => {
@@ -91,8 +90,9 @@ export default function QuoteModal({ isOpen, onClose }) {
                 Thank you, <span className="text-white font-medium">{formData.name || 'Valued Client'}</span>. 
                 Our senior fabrication estimator will review your specifications and contact you within 24 hours.
               </p>
-              <div className="pt-4 border-t border-white/10 text-xs font-mono text-white/50">
-                Direct Line: <a href="tel:+971509689671" className="text-copper hover:underline">+971 50 9689671</a>
+              <div className="pt-4 border-t border-white/10 text-xs font-mono text-white/50 space-y-1">
+                <div>Direct Line: <a href="tel:+97165259878" className="text-copper hover:underline">+971 6 525 9878</a></div>
+                <div>Email: <a href="mailto:Charles@pioneerexhibition.ae" className="text-copper hover:underline">Charles@pioneerexhibition.ae</a></div>
               </div>
               <button
                 onClick={handleReset}

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, ArrowUpRight, Phone, Mail, MapPin } from 'lucide-react';
+import { Menu, X, ArrowUpRight, Phone, Mail, MapPin, Globe } from 'lucide-react';
 
 export default function Navbar({ onOpenQuote, currentPage = 'home', onNavigate }) {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -28,6 +28,8 @@ export default function Navbar({ onOpenQuote, currentPage = 'home', onNavigate }
     if (onNavigate) {
       if (link.name === 'About') {
         onNavigate('about');
+      } else if (link.name === 'Services') {
+        onNavigate('services');
       } else if (link.name === 'Home') {
         onNavigate('home');
       } else {
@@ -68,6 +70,7 @@ export default function Navbar({ onOpenQuote, currentPage = 'home', onNavigate }
             {navLinks.map((link) => {
               const isActive =
                 (link.name === 'About' && currentPage === 'about') ||
+                (link.name === 'Services' && currentPage === 'services') ||
                 (link.name === 'Home' && currentPage === 'home' && !isScrolled);
               return (
                 <a
@@ -142,6 +145,7 @@ export default function Navbar({ onOpenQuote, currentPage = 'home', onNavigate }
                     transition={{ delay: 0.05 * idx }}
                     className={`text-lg font-display uppercase tracking-wider flex items-center justify-between py-2 border-b border-white/5 cursor-pointer transition-colors ${
                       (link.name === 'About' && currentPage === 'about') ||
+                      (link.name === 'Services' && currentPage === 'services') ||
                       (link.name === 'Home' && currentPage === 'home')
                         ? 'text-copper font-bold'
                         : 'text-white hover:text-copper'
@@ -170,13 +174,17 @@ export default function Navbar({ onOpenQuote, currentPage = 'home', onNavigate }
 
             {/* Mobile Contact Quick Bar */}
             <div className="border-t border-white/10 pt-6 space-y-3 text-xs text-white/70">
-              <a href="tel:+971509689671" className="flex items-center gap-3 hover:text-copper transition-colors">
+              <a href="tel:+97165259878" className="flex items-center gap-3 hover:text-copper transition-colors">
                 <Phone className="w-4 h-4 text-copper" />
-                <span>+971 50 9689671</span>
+                <span>+971 6 525 9878</span>
               </a>
-              <a href="mailto:info@leadevents.com" className="flex items-center gap-3 hover:text-copper transition-colors">
+              <a href="mailto:Charles@pioneerexhibition.ae" className="flex items-center gap-3 hover:text-copper transition-colors">
                 <Mail className="w-4 h-4 text-copper" />
-                <span>info@leadevents.com</span>
+                <span>Charles@pioneerexhibition.ae</span>
+              </a>
+              <a href="https://pioneerexhibition.ae" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 hover:text-copper transition-colors">
+                <Globe className="w-4 h-4 text-copper" />
+                <span>pioneerexhibition.ae</span>
               </a>
               <div className="flex items-center gap-3 text-white/50">
                 <MapPin className="w-4 h-4 text-copper" />

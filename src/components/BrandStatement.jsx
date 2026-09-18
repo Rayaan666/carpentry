@@ -50,9 +50,10 @@ export default function BrandStatement() {
       latitude: '25.3223',
       longitude: '55.3853',
     },
-    url: 'https://pioneercarpentry.ae',
-    telephone: '+971509689671',
-    areaServed: ['Dubai', 'Abu Dhabi', 'Sharjah', 'United Arab Emirates', 'GCC'],
+    url: 'https://pioneerexhibition.ae',
+    telephone: '+97165259878',
+    email: 'Charles@pioneerexhibition.ae',
+    areaServed: ['United Arab Emirates'],
     priceRange: '$$$',
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
@@ -62,7 +63,7 @@ export default function BrandStatement() {
           '@type': 'Offer',
           itemOffered: {
             '@type': 'Service',
-            name: 'Exhibition Stand Fabrication Dubai & DWTC',
+            name: 'Exhibition Stand Fabrication',
           },
         },
         {
@@ -76,7 +77,7 @@ export default function BrandStatement() {
           '@type': 'Offer',
           itemOffered: {
             '@type': 'Service',
-            name: 'Event Stage & Backdrop Fabrication ADNEC',
+            name: 'Event Stage & Backdrop Fabrication',
           },
         },
       ],
@@ -116,7 +117,7 @@ export default function BrandStatement() {
 
             {/* Keyword-rich Copy */}
             <p className="text-base sm:text-lg text-warmgrey font-light leading-relaxed max-w-xl">
-              As a premier <strong className="font-normal text-charcoal">UAE exhibition stand contractor</strong> and <strong className="font-normal text-charcoal">custom joinery workshop in Sharjah</strong>, Pioneer Carpentry turns architectural blueprints into high-impact venue environments across Dubai (DWTC), Abu Dhabi (ADNEC), and the GCC.
+              As a premier <strong className="font-normal text-charcoal">UAE exhibition stand contractor</strong> and <strong className="font-normal text-charcoal">custom joinery workshop in Sharjah</strong>, Pioneer Carpentry turns architectural blueprints into high-impact event and exhibition environments across the UAE.
             </p>
 
             {/* SEO Key Capabilities Badges */}

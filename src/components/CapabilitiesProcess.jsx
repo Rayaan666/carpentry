@@ -23,12 +23,12 @@ export default function CapabilitiesProcess() {
     {
       num: '04',
       title: 'UAE VENUE LOGISTICS',
-      desc: 'Direct scheduled logistics transit to DWTC, ADNEC & Expo City Dubai with custom crating and dedicated staging crews.',
+      desc: 'Direct scheduled logistics transit across all major UAE venues with custom crating and dedicated staging crews.',
     },
     {
       num: '05',
       title: 'ON-SITE INSTALLATION',
-      desc: '24/7 venue build, structural leveling, AV integration, seamless touch-ups, and live event standby team across UAE & GCC.',
+      desc: '24/7 venue build, structural leveling, AV integration, seamless touch-ups, and live event standby team across the UAE.',
     },
   ];
 
@@ -47,7 +47,7 @@ export default function CapabilitiesProcess() {
     '@context': 'https://schema.org',
     '@type': 'HowTo',
     name: 'How Pioneer Carpentry Fabricates & Delivers Exhibition Stands in the UAE',
-    description: 'A 5-step industrial fabrication process from Sharjah workshop to live venue installation across Dubai, Abu Dhabi, and the GCC.',
+    description: 'A 5-step industrial fabrication process from Sharjah workshop to live venue installation across the UAE.',
     step: steps.map((s) => ({
       '@type': 'HowToStep',
       name: s.title,
@@ -82,7 +82,7 @@ export default function CapabilitiesProcess() {
             <span className="text-copper">DELIVERED ANYWHERE.</span>
           </h2>
           <p className="text-base sm:text-lg text-[#FAF8F5]/70 font-light leading-relaxed max-w-2xl">
-            From our fully-equipped <strong className="font-normal text-white">Sharjah joinery workshop</strong> to turnkey venue builds at <strong className="font-normal text-white">Dubai World Trade Centre (DWTC)</strong> and <strong className="font-normal text-white">ADNEC Abu Dhabi</strong>, our team manages every stage of custom exhibition stand fabrication with millimeter precision.
+            From our fully-equipped <strong className="font-normal text-white">Sharjah joinery workshop</strong> to turnkey venue builds across <strong className="font-normal text-white">leading UAE exhibition centers and event halls</strong>, our team manages every stage of custom exhibition stand fabrication with millimeter precision.
           </p>
         </div>
 
