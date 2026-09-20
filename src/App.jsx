@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Routes, Route, useNavigate, useLocation, Navigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import BrandStatement from './components/BrandStatement';
@@ -12,98 +13,119 @@ import Footer from './components/Footer';
 import QuoteModal from './components/QuoteModal';
 import AboutPage from './components/AboutPage';
 import ServicesPage from './components/ServicesPage';
+import ContactPage from './components/ContactPage';
 
 export default function App() {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
-  const [currentPage, setCurrentPage] = useState(() => {
-    if (window.location.hash.includes('service') || window.location.pathname.includes('/service')) {
-      return 'services';
-    }
-    return window.location.hash.includes('about') || window.location.pathname === '/about' ? 'about' : 'home';
-  });
+  const navigate = useNavigate();
+  const location = useLocation();
 
-  useEffect(() => {
-    const handleHashChange = () => {
-      if (window.location.hash.includes('service')) {
-        setCurrentPage('services');
-      } else if (window.location.hash.includes('about')) {
-        setCurrentPage('about');
-      } else if (
-        window.location.hash === '#home' ||
-        window.location.hash === '' ||
-        window.location.hash === '#hero'
-      ) {
-        setCurrentPage('home');
-      }
-    };
-    window.addEventListener('hashchange', handleHashChange);
-    return () => window.removeEventListener('hashchange', handleHashChange);
-  }, []);
+  // Determine active page from path or hash
+  const getCurrentPage = () => {
+    const path = location.pathname.toLowerCase();
+    const hash = location.hash.toLowerCase();
 
+    if (path === '/contact' || hash.includes('contact')) return 'contact';
+    if (path === '/services' || hash.includes('service')) return 'services';
+    if (path === '/about' || hash.includes('about')) return 'about';
+    return 'home';
+  };
+
+  const currentPage = getCurrentPage();
+
+  // Scroll to top and set SEO Metadata on page changes
   useEffect(() => {
-    // Always start at top of page when switching pages
     window.scrollTo(0, 0);
 
-    if (currentPage === 'services') {
+    const metaDesc = document.querySelector('meta[name="description"]');
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+
+    if (currentPage === 'contact') {
+      document.title = 'Contact Pioneer Carpentry | UAE Exhibition & Event Fabrication';
+      if (metaDesc) {
+        metaDesc.setAttribute(
+          'content',
+          'Contact Pioneer Carpentry in Sharjah for exhibition stands, event fabrication, kiosks, brand activations, custom joinery and installation projects across the UAE.'
+        );
+      }
+      canonical.setAttribute('href', 'https://pioneercarpentry.ae/contact');
+    } else if (currentPage === 'services') {
       document.title = 'Exhibition & Event Fabrication Services UAE | Pioneer Carpentry';
-      const metaDesc = document.querySelector('meta[name="description"]');
       if (metaDesc) {
         metaDesc.setAttribute(
           'content',
           "Explore Pioneer Carpentry's exhibition stand, event stage, kiosk, brand activation, custom fabrication and installation services across the UAE."
         );
       }
+      canonical.setAttribute('href', 'https://pioneercarpentry.ae/services');
     } else if (currentPage === 'about') {
       document.title = 'About Pioneer Carpentry | Exhibition & Event Fabrication UAE';
-      const metaDesc = document.querySelector('meta[name="description"]');
       if (metaDesc) {
         metaDesc.setAttribute(
           'content',
           'Learn about Pioneer Carpentry, a UAE-based fabrication company delivering exhibition stands, event stages, kiosks, branded structures and custom installations.'
         );
       }
+      canonical.setAttribute('href', 'https://pioneercarpentry.ae/about');
     } else {
       document.title = 'PIONEER CARPENTRY | Events • Exhibitions • Fabrication | UAE';
-      const metaDesc = document.querySelector('meta[name="description"]');
       if (metaDesc) {
         metaDesc.setAttribute(
           'content',
           'Pioneer Carpentry is a UAE specialist fabrication and production company transforming creative concepts into physical experiences: exhibition stands, event stages, brand activations, kiosks, and custom structures.'
         );
       }
+      canonical.setAttribute('href', 'https://pioneercarpentry.ae/');
     }
-  }, [currentPage]);
+  }, [currentPage, location.pathname]);
 
+  // Unified canonical navigation handler
   const handleNavigate = (page, targetHash) => {
-    setCurrentPage(page);
-    window.scrollTo(0, 0);
-
-    if (page === 'services') {
+    if (page === 'contact') {
+      navigate('/contact');
       if (targetHash) {
-        window.location.hash = targetHash.replace('#', '');
         setTimeout(() => {
           const el = document.querySelector(targetHash);
           if (el) el.scrollIntoView({ behavior: 'smooth' });
-        }, 80);
-      } else {
-        window.location.hash = 'services';
+        }, 100);
+      }
+    } else if (page === 'services') {
+      navigate('/services' + (targetHash ? targetHash : ''));
+      if (targetHash) {
+        setTimeout(() => {
+          const el = document.querySelector(targetHash);
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
       }
     } else if (page === 'about') {
-      window.location.hash = 'about';
-    } else {
+      navigate('/about');
       if (targetHash) {
-        window.location.hash = targetHash.replace('#', '');
         setTimeout(() => {
           const el = document.querySelector(targetHash);
           if (el) el.scrollIntoView({ behavior: 'smooth' });
-        }, 80);
-      } else {
-        window.location.hash = 'hero';
+        }, 100);
+      }
+    } else {
+      navigate('/' + (targetHash ? targetHash : ''));
+      if (targetHash) {
+        setTimeout(() => {
+          const el = document.querySelector(targetHash);
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
       }
     }
   };
 
-  const handleOpenQuote = () => setQuoteModalOpen(true);
+  // Direct CTAs across the entire website canonical destination: /contact
+  const handleOpenQuote = () => {
+    navigate('/contact');
+  };
+
   const handleCloseQuote = () => setQuoteModalOpen(false);
 
   return (
@@ -115,55 +137,92 @@ export default function App() {
         onNavigate={handleNavigate}
       />
 
-      {/* Main Content: Services Page, About Page, or Home Page */}
-      {currentPage === 'services' ? (
-        <main className="flex-1 flex flex-col">
-          <ServicesPage
-            onOpenQuote={handleOpenQuote}
-            onNavigate={handleNavigate}
+      {/* Main Content with React Router */}
+      <div className="flex-1 flex flex-col">
+        <Routes>
+          {/* Canonical /contact Route */}
+          <Route
+            path="/contact"
+            element={
+              <main className="flex-1 flex flex-col">
+                <ContactPage onNavigate={handleNavigate} />
+              </main>
+            }
           />
-        </main>
-      ) : currentPage === 'about' ? (
-        <main className="flex-1 flex flex-col">
-          <AboutPage
-            onOpenQuote={handleOpenQuote}
-            onNavigateHome={() => handleNavigate('home')}
+
+          {/* Dedicated /services Route */}
+          <Route
+            path="/services"
+            element={
+              <main className="flex-1 flex flex-col">
+                <ServicesPage
+                  onOpenQuote={handleOpenQuote}
+                  onNavigate={handleNavigate}
+                />
+              </main>
+            }
           />
-        </main>
-      ) : (
-        <main className="flex-1 flex flex-col">
-          {/* 02 — Hero Section */}
-          <Hero onOpenQuote={handleOpenQuote} />
 
-          {/* 03 — Intro / Brand Statement */}
-          <BrandStatement />
+          {/* Dedicated /about Route */}
+          <Route
+            path="/about"
+            element={
+              <main className="flex-1 flex flex-col">
+                <AboutPage
+                  onOpenQuote={handleOpenQuote}
+                  onNavigateHome={() => handleNavigate('home')}
+                  onNavigate={handleNavigate}
+                />
+              </main>
+            }
+          />
 
-          {/* 04 — Services */}
-          <ServicesSection onOpenQuote={handleOpenQuote} />
+          {/* Home Route */}
+          <Route
+            path="/"
+            element={
+              <main className="flex-1 flex flex-col">
+                {/* 02 — Hero Section */}
+                <Hero onOpenQuote={handleOpenQuote} onNavigate={handleNavigate} />
 
-          {/* 06 — Capabilities / From Workshop to Venue */}
-          <CapabilitiesProcess />
+                {/* 03 — Intro / Brand Statement */}
+                <BrandStatement />
 
-          {/* 07 — Visual Transformation Section */}
-          <VisualTransformation />
+                {/* 04 — Services */}
+                <ServicesSection onOpenQuote={handleOpenQuote} onNavigate={handleNavigate} />
 
-          {/* 08 — Why Pioneer */}
-          <WhyPioneer />
+                {/* 06 — Capabilities / From Workshop to Venue */}
+                <CapabilitiesProcess />
 
-          {/* 09 — Numbers / Impact Strip */}
-          <ImpactStrip />
+                {/* 07 — Visual Transformation Section */}
+                <VisualTransformation />
 
-          {/* 11 — CTA / Start A Project */}
-          <CallToAction onOpenQuote={handleOpenQuote} />
-        </main>
-      )}
+                {/* 08 — Why Pioneer */}
+                <WhyPioneer />
 
-      {/* 12 — Footer */}
-      <Footer onOpenQuote={handleOpenQuote} onNavigate={handleNavigate} currentPage={currentPage} />
+                {/* 09 — Numbers / Impact Strip */}
+                <ImpactStrip />
 
-      {/* Interactive Project Inquiry & Quote Modal */}
+                {/* 11 — CTA / Start A Project */}
+                <CallToAction onOpenQuote={handleOpenQuote} />
+              </main>
+            }
+          />
+
+          {/* Catch-all redirect to Home */}
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+      </div>
+
+      {/* 12 — Footer (Exact Existing Component Reused) */}
+      <Footer
+        onOpenQuote={handleOpenQuote}
+        onNavigate={handleNavigate}
+        currentPage={currentPage}
+      />
+
+      {/* Interactive Project Inquiry & Quote Modal (Optional Fallback) */}
       <QuoteModal isOpen={quoteModalOpen} onClose={handleCloseQuote} />
     </div>
   );
 }
-

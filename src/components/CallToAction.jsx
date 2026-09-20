@@ -6,9 +6,9 @@ export default function CallToAction({ onOpenQuote }) {
   const ctaSchema = {
     '@context': 'https://schema.org',
     '@type': 'ContactPoint',
-    telephone: '+97165259878',
+    telephone: '+971509689671',
     contactType: 'sales & estimation',
-    email: 'Charles@pioneerexhibition.ae',
+    email: 'info@leadevents.com',
     areaServed: ['United Arab Emirates'],
     availableLanguage: ['English', 'Arabic'],
     hoursAvailable: {
@@ -82,12 +82,12 @@ export default function CallToAction({ onOpenQuote }) {
             </button>
 
             <a
-              href="tel:+97165259878"
-              aria-label="Call Pioneer Carpentry direct phone line +971 6 525 9878"
+              href="tel:+971509689671"
+              aria-label="Call Pioneer Carpentry direct phone line +971 50 9689671"
               className="bg-copper hover:bg-copper-hover text-white text-xs uppercase tracking-[0.2em] font-semibold px-9 py-4 flex items-center justify-center gap-3 transition-all duration-300 shadow-copper-sm hover:shadow-copper-lg group cursor-pointer"
             >
               <Phone className="w-4 h-4" />
-              <span>+971 6 525 9878</span>
+              <span>+971 50 9689671</span>
             </a>
           </div>
 
@@ -95,11 +95,11 @@ export default function CallToAction({ onOpenQuote }) {
           <div className="mt-5 flex flex-wrap items-center gap-4 text-xs font-mono text-white/50">
             <span>DIRECT WORKSHOP ESTIMATION</span>
             <span>•</span>
-            <a href="mailto:Charles@pioneerexhibition.ae" className="hover:text-copper transition-colors">
-              Charles@pioneerexhibition.ae
+            <a href="mailto:info@leadevents.com" className="hover:text-copper transition-colors">
+              info@leadevents.com
             </a>
             <span>•</span>
-            <span className="text-white/40">Sharjah Industrial Area 4, UAE</span>
+            <span className="text-white/40">Warehouse 1, Industrial Area 4, Sharjah</span>
           </div>
         </div>
       </div>

@@ -640,7 +640,7 @@ export default function ServicesPage({ onOpenQuote, onNavigate }) {
       name: 'Pioneer Carpentry',
       address: {
         '@type': 'PostalAddress',
-        streetAddress: 'Unit 01, Industrial Area 4, Al Senaiyat',
+        streetAddress: 'Warehouse 1, Sheikh Khalifa Bin Zayed Al Nahyan Rd, Industrial Area 4',
         addressLocality: 'Sharjah',
         addressCountry: 'AE'
       },

@@ -2,13 +2,14 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowUpRight, ArrowRight } from 'lucide-react';
 
-export default function ServicesSection({ onOpenQuote }) {
+export default function ServicesSection({ onOpenQuote, onNavigate }) {
   const [hoveredService, setHoveredService] = useState(null);
 
   const services = [
     {
       num: '01',
       title: 'EXHIBITION STANDS',
+      target: '#service-exhibition-stands',
       desc: 'Custom-built exhibition environments engineered around your brand.',
       details: 'Turnkey exhibition stands, double-decker pavilions, hanging banners, VIP client lounges, and venue-approved structural fabrication across all major UAE exhibition venues.',
       image: '/service/1.png',
@@ -17,6 +18,7 @@ export default function ServicesSection({ onOpenQuote }) {
     {
       num: '02',
       title: 'EVENTS & STAGES',
+      target: '#service-custom-stages',
       desc: 'Stages, backdrops and complete structures for corporate and live events.',
       details: 'Modular speaker stages, keynote amphitheaters, geometric branded backdrops, LED video-wall support frameworks, and presidential podiums.',
       image: '/service/2.png',
@@ -25,6 +27,7 @@ export default function ServicesSection({ onOpenQuote }) {
     {
       num: '03',
       title: 'BRAND ACTIVATIONS',
+      target: '#service-brand-activations',
       desc: 'Immersive structures and installations designed to bring brands into the physical world.',
       details: 'Experiential experiential tunnels, interactive product launch displays, pop-up architectural pavilions, and high-impact mall activations.',
       image: '/service/5.png',
@@ -33,6 +36,7 @@ export default function ServicesSection({ onOpenQuote }) {
     {
       num: '04',
       title: 'KIOSKS & DISPLAYS',
+      target: '#service-kiosks-displays',
       desc: 'Custom retail kiosks, display counters and branded presentation units.',
       details: 'Luxury retail kiosks, museum vitrines, display plinths with integrated concealed LED illumination, high-gloss lacquers, and metallic edge trims.',
       image: '/service/4.png',
@@ -41,12 +45,29 @@ export default function ServicesSection({ onOpenQuote }) {
     {
       num: '05',
       title: 'CUSTOM FABRICATION',
+      target: '#service-custom-brief',
       desc: 'Props, furniture, decorative elements, LED cladding and purpose-built structures.',
       details: 'Bespoke sculptural joinery, 3D brand emblems, acoustic slatted paneling, metallic copper/brass finishes, and complex architectural assemblies.',
       image: '/service/9.png',
       aspect: 'md:col-span-4 aspect-[4/3]',
     },
   ];
+
+  const handleExploreClick = () => {
+    if (onNavigate) {
+      onNavigate('services');
+    } else {
+      onOpenQuote();
+    }
+  };
+
+  const handleCardClick = (item) => {
+    if (onNavigate) {
+      onNavigate('services', item.target);
+    } else {
+      onOpenQuote();
+    }
+  };
 
   return (
     <section id="services" className="bg-[#FAF8F5] text-charcoal py-8 sm:py-10 lg:py-12 border-b border-ivory-border relative">
@@ -80,7 +101,7 @@ export default function ServicesSection({ onOpenQuote }) {
                 key={item.num}
                 onMouseEnter={() => setHoveredService(index)}
                 onMouseLeave={() => setHoveredService(null)}
-                onClick={onOpenQuote}
+                onClick={() => handleCardClick(item)}
                 className={`${item.aspect} relative group overflow-hidden bg-charcoal cursor-pointer border border-ivory-border shadow-architectural transition-all duration-500`}
               >
                 {/* Background Image with Hover Scale */}
@@ -156,8 +177,8 @@ export default function ServicesSection({ onOpenQuote }) {
             Specialist Joinery • Structural Steel • Turnkey Installation • UAE
           </div>
           <button
-            onClick={onOpenQuote}
-            className="inline-flex items-center gap-3 text-xs uppercase tracking-[0.2em] font-semibold text-charcoal hover:text-copper transition-colors group"
+            onClick={handleExploreClick}
+            className="inline-flex items-center gap-3 text-xs uppercase tracking-[0.2em] font-semibold text-charcoal hover:text-copper transition-colors group cursor-pointer"
           >
             <span>EXPLORE ALL SERVICES</span>
             <ArrowRight className="w-4 h-4 text-copper transition-transform duration-300 group-hover:translate-x-1.5" />

@@ -40,7 +40,7 @@ export default function BrandStatement() {
     description: 'Leading exhibition stand builder, event stage fabricator, and custom joinery workshop in Sharjah, Dubai, and Abu Dhabi UAE.',
     address: {
       '@type': 'PostalAddress',
-      streetAddress: 'Unit 01, Industrial Area 4, Al Senaiyat',
+      streetAddress: 'Warehouse 1, Sheikh Khalifa Bin Zayed Al Nahyan Rd, Industrial Area 4',
       addressLocality: 'Sharjah',
       addressRegion: 'Sharjah',
       addressCountry: 'AE',

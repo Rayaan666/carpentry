@@ -234,7 +234,7 @@ export default function AboutPage({ onOpenQuote, onNavigateHome }) {
       email: 'Charles@pioneerexhibition.ae',
       address: {
         '@type': 'PostalAddress',
-        streetAddress: 'Unit 01, Industrial Area 4, Al Senaiyat',
+        streetAddress: 'Warehouse 1, Sheikh Khalifa Bin Zayed Al Nahyan Rd, Industrial Area 4',
         addressLocality: 'Sharjah',
         addressRegion: 'Sharjah',
         addressCountry: 'AE',
@@ -816,7 +816,7 @@ export default function AboutPage({ onOpenQuote, onNavigateHome }) {
               </h2>
 
               <p className="text-base sm:text-lg text-warmgrey font-light leading-relaxed max-w-xl">
-                Pioneer Carpentry operates from Industrial Area 4, Al Senaiyat, Sharjah, supporting exhibition, event and custom fabrication projects across the UAE.
+                Pioneer Carpentry operates from Warehouse 1, Sheikh Khalifa Bin Zayed Al Nahyan Rd, Industrial Area 4, Sharjah, supporting exhibition, event and custom fabrication projects across the UAE.
               </p>
 
               {/* Direct Venue Access Pills */}

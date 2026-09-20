@@ -2,13 +2,33 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, ChevronDown } from 'lucide-react';
 
-export default function Hero({ onOpenQuote }) {
+export default function Hero({ onOpenQuote, onNavigate }) {
   const bottomCategories = [
     'EXHIBITIONS',
     'EVENTS',
     'ACTIVATIONS',
     'CUSTOM FABRICATION'
   ];
+
+  const handleServicesClick = (e) => {
+    e.preventDefault();
+    if (onNavigate) {
+      onNavigate('services');
+    } else {
+      const el = document.querySelector('#services');
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleAboutClick = (e) => {
+    e.preventDefault();
+    if (onNavigate) {
+      onNavigate('home', '#about');
+    } else {
+      const el = document.querySelector('#about');
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <section id="hero" className="relative min-h-screen flex flex-col justify-between bg-charcoal text-white overflow-hidden">
@@ -80,13 +100,13 @@ export default function Hero({ onOpenQuote }) {
               transition={{ duration: 0.8, delay: 0.8 }}
               className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-5"
             >
-              <a
-                href="#projects"
+              <button
+                onClick={handleServicesClick}
                 className="bg-copper hover:bg-copper-hover text-white text-xs uppercase tracking-[0.2em] font-semibold px-8 py-4 flex items-center justify-center gap-3 transition-all duration-300 shadow-copper-sm hover:shadow-copper-lg group cursor-pointer"
               >
-                <span>VIEW OUR PROJECTS</span>
+                <span>OUR SERVICES</span>
                 <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-              </a>
+              </button>
 
               <button
                 onClick={onOpenQuote}
@@ -107,12 +127,12 @@ export default function Hero({ onOpenQuote }) {
           <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 sm:gap-8 lg:gap-12">
             {bottomCategories.map((item, idx) => (
               <div key={item} className="flex items-center gap-3 sm:gap-6">
-                <a
-                  href="#services"
+                <button
+                  onClick={handleServicesClick}
                   className="text-[11px] sm:text-xs font-mono uppercase tracking-[0.22em] text-white/70 font-medium hover:text-copper transition-colors cursor-pointer"
                 >
                   {item}
-                </a>
+                </button>
                 {idx < bottomCategories.length - 1 && (
                   <span className="w-1.5 h-1.5 rounded-full bg-copper/40 hidden sm:inline-block" />
                 )}
@@ -121,9 +141,9 @@ export default function Hero({ onOpenQuote }) {
           </div>
 
           {/* Minimal Animated Scroll Indicator */}
-          <a
-            href="#about"
-            className="flex items-center gap-2.5 text-[10px] font-mono tracking-[0.25em] text-white/50 hover:text-copper transition-colors uppercase py-1"
+          <button
+            onClick={handleAboutClick}
+            className="flex items-center gap-2.5 text-[10px] font-mono tracking-[0.25em] text-white/50 hover:text-copper transition-colors uppercase py-1 cursor-pointer"
           >
             <span>SCROLL</span>
             <motion.div
@@ -132,7 +152,7 @@ export default function Hero({ onOpenQuote }) {
             >
               <ChevronDown className="w-3.5 h-3.5 text-copper" />
             </motion.div>
-          </a>
+          </button>
         </div>
       </div>
     </section>

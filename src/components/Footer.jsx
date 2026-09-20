@@ -19,12 +19,10 @@ const LinkedinIcon = ({ className }) => (
 
 export default function Footer({ onOpenQuote, onNavigate, currentPage = 'home' }) {
   const navigationLinks = [
-    { name: 'Home', href: '#hero' },
-    { name: 'About', href: '#about' },
-    { name: 'Services', href: '#services' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Capabilities', href: '#capabilities' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Home', href: '/' },
+    { name: 'About', href: '/about' },
+    { name: 'Services', href: '/services' },
+    { name: 'Contact', href: '/contact' },
   ];
 
   const handleNavClick = (e, link) => {
@@ -34,6 +32,8 @@ export default function Footer({ onOpenQuote, onNavigate, currentPage = 'home' }
         onNavigate('about');
       } else if (link.name === 'Services') {
         onNavigate('services');
+      } else if (link.name === 'Contact') {
+        onNavigate('contact');
       } else if (link.name === 'Home') {
         onNavigate('home');
       } else {
@@ -103,6 +103,7 @@ export default function Footer({ onOpenQuote, onNavigate, currentPage = 'home' }
                 const isActive =
                   (link.name === 'About' && currentPage === 'about') ||
                   (link.name === 'Services' && currentPage === 'services') ||
+                  (link.name === 'Contact' && currentPage === 'contact') ||
                   (link.name === 'Home' && currentPage === 'home');
                 return (
                   <li key={link.name}>
@@ -157,15 +158,15 @@ export default function Footer({ onOpenQuote, onNavigate, currentPage = 'home' }
             <div className="space-y-4 text-sm font-light text-charcoal/85">
               <div className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-copper shrink-0" />
-                <a href="mailto:Charles@pioneerexhibition.ae" className="hover:text-copper transition-colors">
-                  Charles@pioneerexhibition.ae
+                <a href="mailto:info@leadevents.com" className="hover:text-copper transition-colors">
+                  info@leadevents.com
                 </a>
               </div>
 
               <div className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-copper shrink-0" />
-                <a href="tel:+97165259878" className="hover:text-copper transition-colors">
-                  +971 6 525 9878
+                <a href="tel:+971509689671" className="hover:text-copper transition-colors">
+                  +971 50 9689671
                 </a>
               </div>
 
@@ -179,16 +180,16 @@ export default function Footer({ onOpenQuote, onNavigate, currentPage = 'home' }
               <div className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-copper shrink-0 mt-1" />
                 <div className="text-warmgrey leading-relaxed">
-                  Unit 01, Industrial Area 4, <br />
-                  Al Senaiyat, Al Sharjah, <br />
-                  United Arab Emirates
+                  Warehouse 1, Sheikh Khalifa Bin Zayed Al Nahyan Rd, <br />
+                  Industrial Area 4, Industrial Area, <br />
+                  Sharjah, UAE
                 </div>
               </div>
             </div>
 
             <div className="pt-2 flex flex-wrap items-center gap-6">
               <a
-                href="https://maps.google.com/?q=Sharjah+Industrial+Area+4+UAE"
+                href="https://maps.google.com/?q=Warehouse+1+Sheikh+Khalifa+Bin+Zayed+Al+Nahyan+Rd+Industrial+Area+4+Sharjah+UAE"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-xs font-mono tracking-[0.18em] uppercase text-copper font-semibold hover:underline cursor-pointer"
