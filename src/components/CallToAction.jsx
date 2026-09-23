@@ -6,9 +6,9 @@ export default function CallToAction({ onOpenQuote }) {
   const ctaSchema = {
     '@context': 'https://schema.org',
     '@type': 'ContactPoint',
-    telephone: '+971509689671',
+    telephone: '+97165259878',
     contactType: 'sales & estimation',
-    email: 'info@leadevents.com',
+    email: 'Charles@Pioneerexhibition.ae',
     areaServed: ['United Arab Emirates'],
     availableLanguage: ['English', 'Arabic'],
     hoursAvailable: {
@@ -82,12 +82,12 @@ export default function CallToAction({ onOpenQuote }) {
             </button>
 
             <a
-              href="tel:+971509689671"
-              aria-label="Call Pioneer Carpentry direct phone line +971 50 9689671"
+              href="tel:+97165259878"
+              aria-label="Call Pioneer Carpentry direct phone line +971 6 525 9878"
               className="bg-copper hover:bg-copper-hover text-white text-xs uppercase tracking-[0.2em] font-semibold px-9 py-4 flex items-center justify-center gap-3 transition-all duration-300 shadow-copper-sm hover:shadow-copper-lg group cursor-pointer"
             >
               <Phone className="w-4 h-4" />
-              <span>+971 50 9689671</span>
+              <span>+971 6 525 9878</span>
             </a>
           </div>
 
@@ -95,8 +95,8 @@ export default function CallToAction({ onOpenQuote }) {
           <div className="mt-5 flex flex-wrap items-center gap-4 text-xs font-mono text-white/50">
             <span>DIRECT WORKSHOP ESTIMATION</span>
             <span>•</span>
-            <a href="mailto:info@leadevents.com" className="hover:text-copper transition-colors">
-              info@leadevents.com
+            <a href="mailto:Charles@Pioneerexhibition.ae" className="hover:text-copper transition-colors">
+              Charles@Pioneerexhibition.ae
             </a>
             <span>•</span>
             <span className="text-white/40">Warehouse 1, Industrial Area 4, Sharjah</span>

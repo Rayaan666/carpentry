@@ -96,8 +96,8 @@ export default function ContactPage({ onNavigate }) {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
     name: 'Pioneer Carpentry',
-    telephone: '+971 50 9689671',
-    email: 'info@leadevents.com',
+    telephone: '+971 6 525 9878',
+    email: 'Charles@Pioneerexhibition.ae',
     address: {
       '@type': 'PostalAddress',
       streetAddress: 'Warehouse 1, Sheikh Khalifa Bin Zayed Al Nahyan Rd, Industrial Area 4',
@@ -162,11 +162,11 @@ export default function ContactPage({ onNavigate }) {
                 </button>
 
                 <a
-                  href="tel:+971509689671"
+                  href="tel:+97165259878"
                   className="inline-flex items-center gap-3 text-xs sm:text-sm font-mono tracking-wider text-charcoal hover:text-copper transition-colors py-2"
                 >
                   <span className="w-2 h-2 rounded-full bg-copper animate-pulse" />
-                  <span className="font-semibold">+971 50 9689671</span>
+                  <span className="font-semibold">+971 6 525 9878</span>
                 </a>
               </div>
             </div>
@@ -402,8 +402,8 @@ export default function ContactPage({ onNavigate }) {
                   <div className="text-copper uppercase tracking-wider font-medium">
                     DIRECT FABRICATION ESTIMATION
                   </div>
-                  <div>Phone: <a href="tel:+971509689671" className="text-white hover:text-copper transition-colors">+971 50 9689671</a></div>
-                  <div>Email: <a href="mailto:info@leadevents.com" className="text-white hover:text-copper transition-colors">info@leadevents.com</a></div>
+                  <div>Phone: <a href="tel:+97165259878" className="text-white hover:text-copper transition-colors">+971 6 525 9878</a></div>
+                  <div>Email: <a href="mailto:Charles@Pioneerexhibition.ae" className="text-white hover:text-copper transition-colors">Charles@Pioneerexhibition.ae</a></div>
                 </div>
               </div>
             </div>
@@ -473,7 +473,7 @@ export default function ContactPage({ onNavigate }) {
                       SEND ANOTHER BRIEF
                     </button>
                     <a
-                      href="tel:+971509689671"
+                      href="tel:+97165259878"
                       className="px-8 py-3.5 border border-white/20 hover:border-copper text-white text-xs uppercase tracking-[0.2em] font-semibold transition-colors flex items-center justify-center gap-2 cursor-pointer"
                     >
                       <span>CALL WORKSHOP</span>
@@ -707,12 +707,12 @@ export default function ContactPage({ onNavigate }) {
 
                     <div className="text-xs font-mono text-white/60 pt-2">
                       Prefer a quick conversation?{' '}
-                      <a href="tel:+971509689671" className="text-copper hover:underline font-semibold">
-                        CALL +971 50 9689671
+                      <a href="tel:+97165259878" className="text-copper hover:underline font-semibold">
+                        CALL +971 6 525 9878
                       </a>{' '}
                       or{' '}
-                      <a href="mailto:info@leadevents.com" className="text-copper hover:underline font-semibold">
-                        EMAIL info@leadevents.com
+                      <a href="mailto:Charles@Pioneerexhibition.ae" className="text-copper hover:underline font-semibold">
+                        EMAIL Charles@Pioneerexhibition.ae
                       </a>
                     </div>
                   </div>
@@ -834,7 +834,7 @@ export default function ContactPage({ onNavigate }) {
             
             {/* ROW 01 / CALL */}
             <a
-              href="tel:+971509689671"
+              href="tel:+97165259878"
               className="py-8 sm:py-12 flex flex-col md:flex-row md:items-center justify-between gap-4 group transition-colors hover:bg-white/[0.02] cursor-pointer"
             >
               <div className="flex items-baseline gap-4 sm:gap-8">
@@ -842,7 +842,7 @@ export default function ContactPage({ onNavigate }) {
                   01 / CALL
                 </span>
                 <span className="text-2xl sm:text-4xl lg:text-5xl font-display font-bold tracking-tight text-white group-hover:text-copper transition-colors">
-                  +971 50 9689671
+                  +971 6 525 9878
                 </span>
               </div>
               <div className="flex items-center gap-3 text-white/50 group-hover:text-copper transition-colors">
@@ -853,7 +853,7 @@ export default function ContactPage({ onNavigate }) {
 
             {/* ROW 02 / EMAIL */}
             <a
-              href="mailto:info@leadevents.com"
+              href="mailto:Charles@Pioneerexhibition.ae"
               className="py-8 sm:py-12 flex flex-col md:flex-row md:items-center justify-between gap-4 group transition-colors hover:bg-white/[0.02] cursor-pointer"
             >
               <div className="flex items-baseline gap-4 sm:gap-8">
@@ -861,7 +861,7 @@ export default function ContactPage({ onNavigate }) {
                   02 / EMAIL
                 </span>
                 <span className="text-2xl sm:text-4xl lg:text-5xl font-display font-bold tracking-tight text-white group-hover:text-copper transition-colors truncate">
-                  info@leadevents.com
+                  Charles@Pioneerexhibition.ae
                 </span>
               </div>
               <div className="flex items-center gap-3 text-white/50 group-hover:text-copper transition-colors">
@@ -927,7 +927,7 @@ export default function ContactPage({ onNavigate }) {
 
             <div className="shrink-0">
               <a
-                href="https://wa.me/971509689671?text=Hello%20Pioneer%20Carpentry%2C%20I%20would%20like%20to%20discuss%20a%20fabrication%20project."
+                href="https://wa.me/97165259878?text=Hello%20Pioneer%20Carpentry%2C%20I%20would%20like%20to%20discuss%20a%20fabrication%20project."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-8 py-4 bg-copper hover:bg-copper-hover text-white text-xs uppercase tracking-[0.2em] font-semibold transition-all duration-300 shadow-copper-sm hover:shadow-copper-lg inline-flex items-center gap-3 cursor-pointer"
@@ -936,7 +936,7 @@ export default function ContactPage({ onNavigate }) {
                 <span>MESSAGE ON WHATSAPP ↗</span>
               </a>
               <div className="text-[11px] font-mono text-warmgrey pt-2 text-center lg:text-left">
-                +971 50 9689671
+                +971 6 525 9878
               </div>
             </div>
 

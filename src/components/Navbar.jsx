@@ -176,13 +176,13 @@ export default function Navbar({ onOpenQuote, currentPage = 'home', onNavigate }
 
             {/* Mobile Contact Quick Bar */}
             <div className="border-t border-white/10 pt-6 space-y-3 text-xs text-white/70">
-              <a href="tel:+971509689671" className="flex items-center gap-3 hover:text-copper transition-colors">
+              <a href="tel:+97165259878" className="flex items-center gap-3 hover:text-copper transition-colors">
                 <Phone className="w-4 h-4 text-copper" />
-                <span>+971 50 9689671</span>
+                <span>+971 6 525 9878</span>
               </a>
-              <a href="mailto:info@leadevents.com" className="flex items-center gap-3 hover:text-copper transition-colors">
+              <a href="mailto:Charles@Pioneerexhibition.ae" className="flex items-center gap-3 hover:text-copper transition-colors">
                 <Mail className="w-4 h-4 text-copper" />
-                <span>info@leadevents.com</span>
+                <span>Charles@Pioneerexhibition.ae</span>
               </a>
               <a href="https://pioneerexhibition.ae" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 hover:text-copper transition-colors">
                 <Globe className="w-4 h-4 text-copper" />

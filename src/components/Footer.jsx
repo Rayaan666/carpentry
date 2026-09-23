@@ -158,15 +158,15 @@ export default function Footer({ onOpenQuote, onNavigate, currentPage = 'home' }
             <div className="space-y-4 text-sm font-light text-charcoal/85">
               <div className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-copper shrink-0" />
-                <a href="mailto:info@leadevents.com" className="hover:text-copper transition-colors">
-                  info@leadevents.com
+                <a href="mailto:Charles@Pioneerexhibition.ae" className="hover:text-copper transition-colors">
+                  Charles@Pioneerexhibition.ae
                 </a>
               </div>
 
               <div className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-copper shrink-0" />
-                <a href="tel:+971509689671" className="hover:text-copper transition-colors">
-                  +971 50 9689671
+                <a href="tel:+97165259878" className="hover:text-copper transition-colors">
+                  +971 6 525 9878
                 </a>
               </div>
 
